@@ -1,0 +1,130 @@
+@extends('admin.layouts.main')
+@section('container')
+    <div class="card shadow-sm">
+        <form method="post" action="{{ route('teams.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="row p-3">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                            name="name" required autofocus value="{{ old('name') }}">
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <input type="text" class="form-control @error('role') is-invalid @enderror" id="role"
+                            name="role" required autofocus value="{{ old('role') }}">
+                        @error('role')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Photo</label>
+                        <img class="img-preview img-fluid mb-3 col-sm-5">
+                        <input class="form-control @error('photo') is-invalid @enderror" type="file" id="photo"
+                            name="photo" onchange="previewImage()">
+                        @error('photo')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">description</label>
+                        <input id="description" type="hidden" name="description"
+                            value="{{ old('description') }} @error('description') is-invalid @enderror">
+                        <trix-editor input="description"></trix-editor>
+                        @error('description')
+                            <p class="text-danger">
+                                <small>{{ $message }}</small>
+                            </p>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
+                            name="email" autofocus value="{{ old('email') }}">
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="facebook" class="form-label">Facebook</label>
+                        <input type="text" class="form-control @error('facebook') is-invalid @enderror" id="facebook"
+                            name="facebook" autofocus value="{{ old('facebook') }}"
+                            placeholder="https://facebook.com/username">
+                        @error('facebook')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="twitter" class="form-label">Twitter</label>
+                        <input type="text" class="form-control @error('twitter') is-invalid @enderror" id="twitter"
+                            name="twitter" autofocus value="{{ old('twitter') }}" placeholder="https://x.com/username">
+                        @error('twitter')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="linkedin" class="form-label">LinkedIn</label>
+                        <input type="text" class="form-control @error('linkedin') is-invalid @enderror" id="linkedin"
+                            name="linkedin" autofocus value="{{ old('linkedin') }}"
+                            placeholder="https://linkedin.com/in/username">
+                        @error('linkedin')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="instagram" class="form-label">Instagram</label>
+                        <input type="text" class="form-control @error('instagram') is-invalid @enderror" id="instagram"
+                            name="instagram" autofocus value="{{ old('instagram') }}"
+                            placeholder="https://instagram.com/username">
+                        @error('instagram')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-3 d-flex justify-content-end">
+                    <a href="{{ route('teams.index') }}" class="btn btn-xs btn-primary">Back</a>
+                    <button type="submit" class="btn btn-success ml-2" id="submitBtn">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+@section('js')
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#photo');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+
+        }
+    </script>
+@endsection

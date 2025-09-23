@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{{ route('home') }}">Delpro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item @if (Request::is('/')) active @endif"><a href="{{ route('home') }}"
+                        class="nav-link">Home</a></li>
+                <li class="nav-item @if (Request::is('about')) active @endif"><a href="{{ route('about') }}"
+                        class="nav-link">About</a></li>
+                <li class="nav-item @if (Request::is('project*')) active @endif"><a href="{{ route('project') }}"
+                        class="nav-link">Project</a></li>
+                <li class="nav-item @if (Request::is('team')) active @endif"><a href="services.html"
+                        class="nav-link">Team</a></li>
+                <li class="nav-item @if (Request::is('client')) active @endif"><a href="blog.html"
+                        class="nav-link">Client</a></li>
+                <li class="nav-item @if (Request::is('contact')) active @endif"><a href="{{ route('contact') }}"
+                        class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
