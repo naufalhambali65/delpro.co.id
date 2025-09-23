@@ -62,28 +62,33 @@ AOS.init({
                 },
             },
         });
-        $(".carousel-testimony").owlCarousel({
-            center: true,
-            loop: true,
-            items: 1,
-            margin: 30,
-            stagePadding: 0,
-            nav: true,
-            navText: [
-                '<span class="ion-ios-arrow-back">',
-                '<span class="ion-ios-arrow-forward">',
-            ],
-            responsive: {
-                0: {
-                    items: 1,
+        $(".carousel-testimony").each(function () {
+            let $carousel = $(this);
+            let itemCount = $carousel.find(".item").length;
+
+            $carousel.owlCarousel({
+                center: true,
+                loop: itemCount >= 3, // hitungan khusus untuk carousel ini
+                items: 1,
+                margin: 30,
+                stagePadding: 0,
+                nav: true,
+                navText: [
+                    '<span class="ion-ios-arrow-back">',
+                    '<span class="ion-ios-arrow-forward">',
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 3,
+                    },
+                    1000: {
+                        items: 3,
+                    },
                 },
-                600: {
-                    items: 3,
-                },
-                1000: {
-                    items: 3,
-                },
-            },
+            });
         });
 
         $(".single-slider").owlCarousel({

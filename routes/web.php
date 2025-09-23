@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 Route::get('/about', [HomepageController::class, 'about'])->name('about');
+Route::get('/project/{project}', [HomepageController::class, 'detailProject'])->name('project.detail');
 Route::get('/project', [HomepageController::class, 'project'])->name('project');
 Route::get('/contact', [HomepageController::class, 'contact'])->name('contact');
+Route::get('/team', [HomepageController::class, 'team'])->name('team');
+Route::get('/client', [HomepageController::class, 'client'])->name('client');
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');

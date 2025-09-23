@@ -10327,8 +10327,23 @@ h5,
     transform: scale(1.3);
 }
 
+.staff {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .staff .img {
-    height: 320px;
+    width: 100%;
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.staff:hover .img {
+    transform: scale(1.1);
 }
 
 .staff .text h3 {

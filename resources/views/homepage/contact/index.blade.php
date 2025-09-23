@@ -33,7 +33,8 @@
                     <p><span>Phone:</span> <a href="tel://+628112283338">+62 811 228 3338</a></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Email:</span> <a href="mailto:home@delpro.co.id">home@delpro.co.id</a></p>
+                    <p><span>Email:</span> <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=home@delpro.co.id">home@delpro.co.id</a></p>
                 </div>
                 <div class="col-md-3">
                     <p><span>Website</span> <a href="https://delpro.co.id/">delpro.co.id</a></p>

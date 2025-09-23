@@ -29,7 +29,7 @@
                         <label for="photo" class="form-label">Photo</label>
                         <img class="img-preview img-fluid mb-3 col-sm-5">
                         <input class="form-control @error('photo') is-invalid @enderror" type="file" id="photo"
-                            name="photo" onchange="previewImage()">
+                            name="photo" onchange="previewImage()" value="{{ old('photo') }}">
                         @error('photo')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -38,8 +38,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">description</label>
-                        <input id="description" type="hidden" name="description"
-                            value="{{ old('description') }} @error('description') is-invalid @enderror">
+                        <input id="description" type="hidden" name="description" value="{{ old('description') }}"
+                            class="@error('description') is-invalid @enderror">
                         <trix-editor input="description"></trix-editor>
                         @error('description')
                             <p class="text-danger">

@@ -14,7 +14,7 @@
         }
 
         .block-20 {
-            height: 250px;
+            height: 400px;
             background-size: cover;
             background-position: center;
             display: block;
@@ -56,10 +56,6 @@
             font-weight: 200;
             text-decoration: none;
         }
-
-        /* .title-card a:hover {
-                                                                                    color: yellow;
-                                                                                } */
     </style>
 @endsection
 @section('container')
@@ -93,7 +89,7 @@
                 @foreach ($projects as $project)
                     <div class="col-md-4 ftco-animate">
                         <div class="blog-entry position-relative project-card">
-                            <a href="/project/{{ $project->slug }}" class="block-20 mb-0"
+                            <a href="{{ route('project.detail', $project->slug) }}" class="block-20 mb-0"
                                 style="background-image: url('{{ asset('storage/' . $project->cover_image) }}');">
                             </a>
                             <div class="overlay-info d-flex justify-content-between">
@@ -105,7 +101,7 @@
 
                             <div class="title-card">
                                 <h3 class="heading mb-0">
-                                    <a href="/project/{{ $project->slug }}">{{ $project->title }}</a>
+                                    <a href="{{ route('project.detail', $project->slug) }}">{{ $project->title }}</a>
                                 </h3>
                             </div>
                         </div>
