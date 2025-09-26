@@ -13,7 +13,7 @@ class HomepageController extends Controller
     public function index()
     {
         $teams = Team::limit(8)->get();
-        $clients = Client::limit(10)->latest()->get();
+        $clients = Client::limit(5)->latest()->get();
         $projects = Project::limit(4)->latest()->get();
         return view('homepage.index', compact('teams', 'clients', 'projects'));
     }

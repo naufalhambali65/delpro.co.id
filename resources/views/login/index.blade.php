@@ -52,7 +52,7 @@
         }
 
         .btn-login {
-            background: #f497b6;
+            background: #febd3f;
             color: #fff;
             border-radius: 6px;
             font-weight: 600;
@@ -62,7 +62,7 @@
         }
 
         .btn-login:hover {
-            background: #f8b7c8;
+            background: #f8c45c;
         }
 
         .login-footer {
@@ -72,7 +72,7 @@
         }
 
         .login-footer a {
-            color: #f497b6;
+            color: #febd3f;
             font-weight: 500;
             text-decoration: none;
         }
@@ -99,11 +99,11 @@
             font-weight: 600;
             padding: 10px;
             transition: 0.3s;
-            background: #f497b6;
+            background: #febd3f;
         }
 
         .btn-outline-pink:hover {
-            background: #f8b7c8;
+            background: #febd3f;
             color: #fff;
         }
     </style>

@@ -21,8 +21,8 @@
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate">
                     <h2 class="mb-4">Our Client</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                        the blind texts. Separated they live in</p>
+                    <p>We are proud to collaborate with our valued clients across various industries, building lasting
+                        partnerships and delivering impactful solutions.</p>
                 </div>
             </div>
             @foreach ($datas as $categoryName => $clients)

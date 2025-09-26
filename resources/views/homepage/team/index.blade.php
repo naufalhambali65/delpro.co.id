@@ -21,8 +21,8 @@
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate">
                     <h2 class="mb-4">Our Team</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                        the blind texts. Separated they live in</p>
+                    <p>Meet the people behind our success. Our dedicated team combines passion, expertise, and creativity to
+                        deliver the best for our clients.</p>
                 </div>
             </div>
             <div class="row">

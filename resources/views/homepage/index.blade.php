@@ -12,7 +12,8 @@
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A small river named Duden flows
                             by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
                             which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="#" class="btn btn-white btn-outline-white px-4 py-3 mt-3">View our works</a></p>
+                        <p><a href="{{ route('project') }}" class="btn btn-white btn-outline-white px-4 py-3 mt-3">View our
+                                works</a></p>
                     </div>
                 </div>
             </div>
@@ -170,7 +171,8 @@
                     <h2 class="mb-4">Our Projects</h2>
                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
                         paradisematic country, in which roasted parts of sentences</p>
-                    <p><a href="{{ route('project') }}" class="btn-custom">Get More <span class="ion-ios-arrow-forward"></span></a>
+                    <p><a href="{{ route('project') }}" class="btn-custom">Get More <span
+                                class="ion-ios-arrow-forward"></span></a>
                 </div>
             </div>
         </div>
@@ -232,5 +234,4 @@
             </div>
         </div>
     </section>
-
 @endsection
