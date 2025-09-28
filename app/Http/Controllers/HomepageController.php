@@ -12,7 +12,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $teams = Team::limit(8)->get();
+        $teams = Team::limit(4)->get();
         $clients = Client::limit(5)->latest()->get();
         $projects = Project::limit(4)->latest()->get();
         return view('homepage.index', compact('teams', 'clients', 'projects'));
@@ -42,7 +42,7 @@ class HomepageController extends Controller
 
     public function team()
     {
-        $teams = Team::limit(8)->get();
+        $teams = Team::all();
         return view('homepage.team.index', compact('teams'));
     }
 

@@ -26,7 +26,24 @@
 
     <link rel="stylesheet" href="/homepage_assets/css/flaticon.css">
     <link rel="stylesheet" href="/homepage_assets/css/icomoon.css">
-    <link rel="stylesheet" href="/homepage_assets/css/style-rafi.css">
+    <link rel="stylesheet" href="/homepage_assets/css/style-rafi-2.css">
+
+    <style>
+        .logo-wrapper {
+            position: relative;
+        }
+
+        .logo-wrapper img {
+            position: absolute;
+            top: -150px;
+            /* naikkan logo ke atas navbar */
+            left: -50px;
+            /* bisa kamu ganti ke center kalau mau */
+            height: 300px;
+            /* atur tinggi logo */
+            width: auto;
+        }
+    </style>
 
     @yield('css')
 </head>
@@ -57,10 +74,10 @@
     <script src="/homepage_assets/js/aos.js"></script>
     <script src="/homepage_assets/js/jquery.animateNumber.min.js"></script>
     <script src="/homepage_assets/js/bootstrap-datepicker.js"></script>
-    <script src="/homepage_assets/js/jquery.timepicker.min.js"></script>
+    {{-- <script src="/homepage_assets/js/jquery.timepicker.min.js"></script> --}}
     <script src="/homepage_assets/js/scrollax.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="/homepage_assets/js/google-map.js"></script>
+    {{-- <script src="/homepage_assets/js/google-map.js"></script> --}}
     <script src="/homepage_assets/js/main.js"></script>
 
 </body>

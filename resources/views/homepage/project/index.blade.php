@@ -4,7 +4,7 @@
         .project-card {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 4px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -18,7 +18,7 @@
             background-size: cover;
             background-position: center;
             display: block;
-            border-radius: 10px;
+            border-radius: 4px;
 
             transition: transform 0.5s ease;
         }
@@ -28,15 +28,15 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(118, 116, 116, 0.55);
             color: #fff;
             padding: 8px 12px;
             font-size: 13px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
         }
 
         .title-card {
@@ -44,11 +44,11 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(118, 116, 116, 0.55);
             padding: 12px 15px;
             text-align: center;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
         }
 
         .title-card a {
@@ -79,9 +79,10 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section ftco-animate">
-                    <h2 class="mb-4">Our Projects</h2>
-                    <p>Each project tells a story of collaboration, creativity, and meaningful impact. Take a look at what
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h1 class="mb-4">Our Projects</h1>
+                    <p class="text-muted">Each project tells a story of collaboration, creativity, and meaningful impact.
+                        Take a look at what
                         we’ve built together with our partners.</p>
                 </div>
             </div>

@@ -1,4 +1,17 @@
 @extends('homepage.layouts.main')
+@section('css')
+    <style>
+        .client-logo {
+            background: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .client-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+@endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
         <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_2.jpg)">
@@ -16,47 +29,33 @@
             </div>
         </div>
     </section>
+
     <section class="ftco-section testimony-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section ftco-animate">
-                    <h2 class="mb-4">Our Client</h2>
-                    <p>We are proud to collaborate with our valued clients across various industries, building lasting
-                        partnerships and delivering impactful solutions.</p>
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h1 class="mb-4">Our Clients</h1>
+                    <p class="text-muted">We are proud to collaborate with our valued clients across various industries,
+                        building lasting partnerships and delivering impactful solutions.</p>
                 </div>
             </div>
-            @foreach ($datas as $categoryName => $clients)
-                <div class="row ftco-animate">
-                    <div class="row">
-                        <div class="col-md-12 heading-section ftco-animate">
-                            <h2 class="mb-4">{{ $categoryName }}</h2>
-                        </div>
 
-                    </div>
+            @foreach ($datas as $categoryName => $clients)
+                <div class="row mb-4 ftco-animate">
                     <div class="col-md-12">
-                        <div class="carousel-testimony owl-carousel">
-                            @foreach ($clients as $client)
-                                <div class="item">
-                                    <div class="testimony-wrap p-4 pb-5">
-                                        <div class="user-img "
-                                            style="width: 100%;
-                                        min-height: 50px;
-                                        background-image: url('{{ asset('storage/' . $client['logo']) }}');
-                                        background-size: contain;
-                                        background-position: center;
-                                        background-repeat: no-repeat;">
-                                            <span class=" d-flex align-items-center justify-content-center">
-                                            </span>
-                                        </div>
-                                        <div class="text" style="text-align: center">
-                                            <p class="name">{{ $client['name'] }}</p>
-                                            <span class="position">{{ $client['category'] }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+                        <h4 class="mb-4 text-uppercase fw-bold">{{ $categoryName }}</h4>
                     </div>
+
+                    @foreach ($clients as $client)
+                        <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                            <div
+                                class="client-logo p-3 border rounded shadow-sm h-100 d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('storage/' . $client['logo']) }}" alt="{{ $client['name'] }}"
+                                    class="img-fluid" style="max-height: 80px; object-fit: contain;">
+                            </div>
+                            <p class="mb-4 small text-muted">{{ $client['name'] }}</p>
+                        </div>
+                    @endforeach
                 </div>
             @endforeach
         </div>

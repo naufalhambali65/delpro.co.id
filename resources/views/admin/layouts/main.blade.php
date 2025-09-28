@@ -135,7 +135,10 @@
 
         <footer class="main-footer">
             <div class="copyright">
-                &copy; 2025 <strong><span>TumbuhX</span></strong>. All Rights Reserved
+                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> <strong><span>DELPRO</span></strong>. All Rights Reserved
             </div>
         </footer>
 

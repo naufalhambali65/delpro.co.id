@@ -71,28 +71,6 @@
             color: #6c757d;
         }
 
-        .login-footer a {
-            color: #febd3f;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .btn-outline-pink {
             color: #fff;
             border-radius: 6px;
@@ -106,12 +84,50 @@
             background: #febd3f;
             color: #fff;
         }
+
+        .login-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .logo-wrapper {
+            position: relative;
+        }
+
+        .logo-wrapper img {
+            position: absolute;
+            top: -150px;
+            /* naikkan logo ke atas navbar */
+            left: -150px;
+            /* bisa kamu ganti ke center kalau mau */
+            height: 300px;
+            /* atur tinggi logo */
+            width: auto;
+            z-index: -1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="login-box text-center">
-        <h2>Login</h2>
+        <!-- Logo Delpro -->
+        <a class="logo-wrapper p-0 mb-3" href="{{ route('home') }}"><img src="/homepage_assets/images/logo/delpro.png"
+                alt="Delpro Logo">
+        </a>
+
+        <h2 class="mt-4">Login</h2>
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group mb-3">
@@ -134,13 +150,10 @@
             </div>
             <button type="submit" class="btn btn-login w-100">Login</button>
         </form>
+
         <div class="login-footer mt-3">
-            <div class="login-footer mt-3">
-                <p>Don’t have an account? <a href="#">Sign Up</a></p>
-                <p><a href="#">Forgot Password?</a></p>
-                <a href="/" class="btn btn-outline-pink mt-3 w-100"
-                    style="color: #fff; text-decoration: none;">Back to Home</a>
-            </div>
+            <a href="/" class="btn btn-outline-pink mt-3 w-100" style="color: #fff; text-decoration: none;">Back
+                to Home</a>
         </div>
     </div>
 </body>

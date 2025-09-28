@@ -26,18 +26,19 @@
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3">
-                    <p><span>Address:</span> Jl. Guru Tua, Kalukubula, Kec. Sigi Biromaru, Kabupaten Sigi, Sulawesi Tengah
+                    <p><span class="icon icon-map-marker"></span> Jl. Guru Tua, Kalukubula, Kec. Sigi
+                        Biromaru, Kabupaten Sigi, Sulawesi Tengah
                         94111</p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Phone:</span> <a href="tel://+628112283338">+62 811 228 3338</a></p>
+                    <p><span class="icon icon-phone"></span> <a href="tel://+628112283338">+62 811 228 3338</a></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Email:</span> <a
+                    <p><span class="icon icon-envelope"></span> <a
                             href="https://mail.google.com/mail/?view=cm&fs=1&to=home@delpro.co.id">home@delpro.co.id</a></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span>Website</span> <a href="https://delpro.co.id/">delpro.co.id</a></p>
+                    <p><span class="icon icon-globe"></span> <a href="https://delpro.co.id/">delpro.co.id</a></p>
                 </div>
             </div>
             <div class="row block-9">

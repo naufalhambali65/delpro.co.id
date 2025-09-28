@@ -1,7 +1,7 @@
 @extends('homepage.layouts.main')
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_3.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_2.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -17,31 +17,31 @@
             </div>
         </div>
     </section>
-    <section class="ftc-no-pb">
+    <section class="ftco-section ftc-no-pb">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/about.jpg);">
                 </div>
-                <div class="col-md-7 wrap-about pb-md-5 pt-5 ftco-animate">
+                <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
                         <div class="pl-md-5 ml-md-5">
-                            <span class="subheading">About</span>
-                            <h2 class="mb-4">We are the best interior &amp; Architect Consultant in Italy</h2>
+                            <span class="subheading">About Us</span>
+                            <h2 class="mb-4">Delpro – Professional Interior & Architectural Consultant</h2>
                         </div>
                     </div>
-                    <div class="pl-md-5 ml-md-5 mb-5">
-                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
-                            would have been rewritten a thousand times and everything that was left from its origin would be
-                            the word "and" and the Little Blind Text should turn around and return to its own, safe country.
-                            But nothing the copy said could convince her and so it didn’t take long until a few insidious
-                            Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
-                            agency, where they abused her for their.</p>
-                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline
-                            of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own
-                            road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
-                        </p>
-                        {{-- <p><a href="#" class="btn-custom">Learn More <span class="ion-ios-arrow-forward"></span></a> --}}
-                        </p>
+                    <div class="pl-md-5 ml-md-5 mb-5" style="text-align: justify">
+                        <p>The demand for high-quality buildings has become a top priority, making it unsurprising that
+                            people are willing to invest significantly in educational institutions, offices, and residential
+                            homes.</p>
+
+                        <p>We are proud to introduce <strong>Delpro</strong>, operating under <strong>PT Delapan Jaya
+                                Propertindo</strong>.
+                            With full
+                            commitment, we are dedicated to assisting clients in creating comfortable, functional, and
+                            aesthetically pleasing spaces for both living and working.</p>
+
+                        <p>Our team is committed to excellence in design, construction, and delivering the finest experience
+                            to every client.</p>
                     </div>
                 </div>
             </div>
