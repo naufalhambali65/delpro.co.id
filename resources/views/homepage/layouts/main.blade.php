@@ -5,6 +5,7 @@
     <title>DELPRO</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{{ asset('/homepage_assets/images/logo/favicon.png') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -28,6 +29,9 @@
     <link rel="stylesheet" href="/homepage_assets/css/icomoon.css">
     <link rel="stylesheet" href="/homepage_assets/css/style-rafi-2.css">
 
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         .logo-wrapper {
             position: relative;
@@ -35,6 +39,7 @@
 
         .logo-wrapper img {
             position: absolute;
+            z-index: -1;
             top: -150px;
             /* naikkan logo ke atas navbar */
             left: -50px;
@@ -80,6 +85,29 @@
     {{-- <script src="/homepage_assets/js/google-map.js"></script> --}}
     <script src="/homepage_assets/js/main.js"></script>
 
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2500
+            })
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ session('error') }}",
+            })
+        </script>
+    @endif
+
+    @yield('js')
 </body>
 
 </html>

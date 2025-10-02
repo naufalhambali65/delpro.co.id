@@ -16,7 +16,7 @@
 @endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_2.jpg)">
+        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_12.jpg)">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -44,17 +44,36 @@
             </div>
 
             @foreach ($teams as $team)
-                <div class="row align-items-center ftco-animate mb-5">
+                <div class="row align-items-center ftco-animate my-3">
                     <div class="col-md-3">
                         <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
                             class="img-fluid team-photo">
                     </div>
                     <div class="col-md-9">
-                        <h4 class="fw-bold mb-1">{{ $team->name }} <span class="text-warning">| {{ $team->role }}</span>
+                        <h4 class="fw-bold mb-1">{{ $team->name }} <span class="text-warning">|
+                                <strong>{{ $team->role }}</strong></span>
                         </h4>
-                        <div class="fst-italic text-muted">
+                        <div class="fst-italic text-muted" style="text-align: justify">
                             {!! $team->description !!}
                         </div>
+                        <ul class="ftco-social d-flex justify-content-start mt-0">
+                            <li class="ftco-animate" {{ $team->linkedin ? '' : 'hidden' }}>
+                                <a href="{{ $team->linkedin }}" target="_blank"><span class="icon-linkedin"></span></a>
+                            </li>
+                            <li class="ftco-animate" {{ $team->twitter ? '' : 'hidden' }}>
+                                <a href="{{ $team->twitter }}" target="_blank"><span class="icon-twitter"></span></a>
+                            </li>
+                            <li class="ftco-animate" {{ $team->facebook ? '' : 'hidden' }}>
+                                <a href="{{ $team->facebook }}" target="_blank"><span class="icon-facebook"></span></a>
+                            </li>
+                            <li class="ftco-animate {{ $team->email ? '' : 'hidden' }}">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ $team->email }}"
+                                    target="_blank"><span class="icon-envelope-o"></span></a>
+                            </li>
+                            <li class="ftco-animate" {{ $team->instagram ? '' : 'hidden' }}>
+                                <a href="{{ $team->instagram }}" target="_blank"><span class="icon-instagram"></span></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 

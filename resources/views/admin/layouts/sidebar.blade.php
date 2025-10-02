@@ -1,13 +1,19 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <div class="text-center logo-container mt-1 brand-link">
+      {{-- <div class="text-center logo-container mt-1 brand-link">
           <h3>
               <span class="brand-text font-weight-light">
                   <strong>DELPRO</strong>
               </span>
           </h3>
-      </div>
+      </div> --}}
+      <a href="{{ route('admin') }}" class="brand-link">
+          <img src="{{ asset('homepage_assets/images/logo/delpro_white_sidebar.png') }}" alt="DELPRO Logo"
+              style="width:100%; height:auto; object-fit:contain;">
+      </a>
+
+
 
       <!-- Sidebar -->
       <div class="sidebar">
@@ -49,6 +55,18 @@
                           <i class="nav-icon fas fa-users"></i>
                           <p>
                               Teams
+                          </p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('messages.index') }}"
+                          class="nav-link {{ Request::is('admin/messages*') ? 'active' : '' }}">
+                          <i class="nav-icon fas fa-envelope"></i>
+                          <p>
+                              Messages
+                              @if ($newMessage)
+                                  <span class="badge badge-danger right">{{ $newMessage }}</span>
+                              @endif
                           </p>
                       </a>
                   </li>

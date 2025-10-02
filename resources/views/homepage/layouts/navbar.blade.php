@@ -22,6 +22,9 @@
                         class="nav-link">Client</a></li>
                 <li class="nav-item @if (Request::is('contact')) active @endif"><a href="{{ route('contact') }}"
                         class="nav-link">Contact</a></li>
+                @if (auth()->user())
+                    <li class="nav-item"><a href="{{ route('admin') }}" class="nav-link">Admin</a></li>
+                @endif
             </ul>
         </div>
     </div>

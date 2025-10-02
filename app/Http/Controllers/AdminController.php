@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Message;
 use App\Models\Project;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -15,6 +16,8 @@ class AdminController extends Controller
     $teamCount = Team::count();
     $clientCount = Client::count();
     $projectCount = Project::count();
-     return view('admin.index', compact('title', 'teamCount', 'clientCount', 'projectCount'));
+    $messageCount = Message::count();
+    $newMessage = Message::where('status', 0)->count();
+     return view('admin.index', compact('title', 'teamCount', 'clientCount', 'projectCount', 'messageCount', 'newMessage'));
  }
 }

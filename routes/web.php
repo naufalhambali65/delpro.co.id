@@ -5,6 +5,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StyleController;
 use App\Http\Controllers\TeamController;
@@ -38,3 +39,17 @@ Route::resource('/admin/projects', ProjectController::class)->middleware('auth')
 Route::resource('/admin/types', TypeController::class)->middleware('auth');
 Route::resource('/admin/styles', StyleController::class)->middleware('auth');
 Route::resource('/admin/cities', CityController::class)->middleware('auth');
+
+Route::get('/admin/messages', [MessageController::class, 'index'])->middleware('auth')->name('messages.index');
+Route::delete('/admin/messages/{message}', [MessageController::class, 'destroy'])->middleware('auth')->name('messages.destroy');
+Route::put('/admin/messages/{message}', [MessageController::class, 'updateStatus'])->middleware('auth')->name('messages.updateStatus');
+Route::get('/admin/messages/{message}', [MessageController::class, 'show'])->middleware('auth')->name('messages.show');
+
+Route::get('/preview/projects/{encryptedSlug}', [ProjectController::class, 'preview'])->name('preview');
+
+Route::post('/sendEmail', [MessageController::class, 'store'])->name('sendEmail');
+
+Route::get('/copy-success', function () {
+    session()->flash('success', 'Link successfully copied to clipboard!');
+    return response()->json(['status' => 'ok']);
+})->name('copy.success')->middleware('auth');

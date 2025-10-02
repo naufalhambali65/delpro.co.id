@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
     <title>Dashboard</title>
+    <link rel="icon" type="image/png" href="{{ asset('/homepage_assets/images/logo/favicon.png') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -67,47 +67,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
-        .help-button {
-            position: fixed;
-            bottom: 25px;
-            right: 40px;
-            background-color: #484848;
-            color: #ffffff;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 15px;
-            font-size: 16px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 1000;
+        .brand-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .help-button:hover {
-            background-color: #100d11;
-        }
-    </style>
-    <style>
-        .login-card {
-            background-color: rgba(255, 255, 255, 0.75);
-            border-radius: 15px;
-        }
-
-        .logo-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .logo-title span {
-            color: white;
-            background-color: #198754;
-            /* Bootstrap success */
-            padding: 8px 8px;
-            border-radius: 6px;
-        }
-
-        .logo-container {
-            margin-bottom: 20px;
+        .brand-link .brand-image {
+            height: auto !important;
+            /* biar ga dipaksa 33px */
+            max-height: 120px;
+            /* atur sesuai tinggi sidebar */
+            width: 100% !important;
+            /* biar full lebar */
+            object-fit: contain;
+            margin: 0 auto;
+            /* center */
         }
     </style>
 
@@ -161,10 +136,6 @@
     </script>
     <!-- Bootstrap 4 -->
     <script src="/admin_assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    {{-- Bootstrap Js --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script> --}}
     <!-- ChartJS -->
     <script src="/admin_assets/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
@@ -188,15 +159,12 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script> --}}
     <!-- AdminLTE App -->
     <script src="/admin_assets/dist/js/adminlte.js"></script>
-    <!-- AdminLTE App -->
-    <script src="/admin_assets/dist/js/adminlte.min.js"></script>
     <!-- Filterizr-->
     <script src="/admin_assets/plugins/filterizr/jquery.filterizr.min.js"></script>
     <!-- SweetAlert2 -->
     <script src="/admin_assets/plugins/sweetalert2/sweetalert2.min.js"></script>
     <!-- Toastr -->
     <script src="/admin_assets/plugins/toastr/toastr.min.js"></script>
-
 
 
     <!-- DataTables  & Plugins -->

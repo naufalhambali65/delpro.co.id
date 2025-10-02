@@ -1,7 +1,16 @@
 @extends('homepage.layouts.main')
+@section('css')
+    <style>
+        .project-cover {
+            max-width: 800px;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+@endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_1.jpg)">
+        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_11.jpg)">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -19,47 +28,66 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 ftco-animate">
+                <div class="col-lg-12 ftco-animate text-center">
                     <h2 class="mb-3">{{ $project->title }}</h2>
                     <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->title }}"
-                        class="img-fluid">
-                    <p>
-                    </p>
+                        class="img-fluid project-cover">
+                    {{-- Project Info --}}
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-md-8">
+                            <div class="row d-flex justify-content-between">
+                                <div class="mb-3">
+                                    <p class="mb-0"><i class="icon-layers"></i> Type: {{ $project->type->name ?? '-' }}
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-0"><i class="icon-home"></i> Style: {{ $project->style->name ?? '-' }}
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-0"><i class="icon-map-marker"></i> City:
+                                        {{ $project->city->name ?? '-' }}
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-0"><i class="icon-cube"></i> Unit Size: {{ $project->unit_size ?? '-' }}
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-0"><i class="icon-calendar"></i>
+                                        Posted: {{ $project->created_at->diffForHumans() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div style="text-align: justify">
                         {!! $project->description !!}
                     </div>
 
-                </div> <!-- .col-md-8 -->
-
-            </div>
-            <div class="row">
-                <div class="col-lg-12 ftco-animate">
-
                 </div>
+
             </div>
         </div>
     </section>
-    <! <section class="ftco-section">
+    <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
-                <div class="col-md-7 heading-section ftco-animate">
-                    <h2 class="mb-4">All Images</h2>
+                <div class="col-md-12 ftco-animate text-center">
+                    <h2 class="mb-4">Project Galleries</h2>
                 </div>
             </div>
         </div>
-        <div class="container-wrap">
-            <div class="row no-gutters">
+        <div class="container">
+            <div class="row">
                 @if (count($images) > 0)
                     @foreach ($images as $image)
                         <div class="col-md-6 col-lg-3 ftco-animate">
                             <div class="project">
                                 <img src="{{ asset('storage/' . $image) }}" class="img-fluid" alt="{{ $project->title }}">
-                                <div class="text">
-                                    <h3>{{ $project->title }}</h3>
-                                </div>
                                 <a href="{{ asset('storage/' . $image) }}"
                                     class="icon image-popup d-flex justify-content-center align-items-center">
-                                    <span class="icon-expand"></span>
+                                    <span class="icon-photo"></span>
                                 </a>
                             </div>
                         </div>
@@ -67,5 +95,5 @@
                 @endif
             </div>
         </div>
-        </section>
-    @endsection
+    </section>
+@endsection

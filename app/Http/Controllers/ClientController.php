@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\ClientCategory;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,10 +15,11 @@ class ClientController extends Controller
      */
     public function index()
     {
+        $newMessage = Message::where('status', 0)->count();
         $title = 'Clients';
         $clients = Client::all();
         $categories = ClientCategory::all();
-        return view('admin.clients.index', compact('title', 'clients', 'categories'));
+        return view('admin.clients.index', compact('title', 'clients', 'categories', 'newMessage'));
     }
 
     /**
@@ -26,7 +28,8 @@ class ClientController extends Controller
     public function create()
     {
         $title = 'Add Client';
-        return view('admin.clients.create', compact('title'));
+        $newMessage = Message::where('status', 0)->count();
+        return view('admin.clients.create', compact('title', 'newMessage'));
     }
 
     /**

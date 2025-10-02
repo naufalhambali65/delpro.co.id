@@ -1,73 +1,191 @@
 @extends('admin.layouts.main')
 @section('container')
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-12">
             <div class="card shadow-sm">
-                <div class="card-header">
-                    <h3 class="card-title">Details</h3>
+                <div class="card-header d-flex align-items-center">
+                    <h2 class="card-title mb-0 fw-bold">
+                        <i class="fas fa-info-circle me-2 text-primary"></i>Detail
+                    </h2>
+                    <div class="ms-auto">
+                        <a href="{{ route('projects.index') }}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </a>
+                        <a href="{{ route('preview', $encryptedSlug) }}" target="_blank" class="btn btn-sm btn-success">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <button class="btn btn-sm btn-secondary" id="copyLinkBtn"
+                            data-link="{{ route('preview', $encryptedSlug) }}">
+                            <i class="fas fa-copy"></i> Copy Link
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <tr>
-                            <th>Title</th>
-                            <td>{{ $project->title }}</td>
-                        </tr>
-                        <tr>
-                            <th>Type</th>
-                            <td>{{ $project->type->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>Style</th>
-                            <td>{{ $project->style->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>City</th>
-                            <td>{{ $project->city->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>Unit Size</th>
-                            <td>{{ $project->unit_size }}</td>
-                        </tr>
-                        <tr>
-                            <th>Description</th>
-                            <td>{!! $project->description !!}</td>
-                        </tr>
-                        <tr>
-                            <th>Cover Image</th>
-                            <td>
-                                @if ($project->cover_image)
-                                    <img src="{{ asset('storage/' . $project->cover_image) }}" class="img-fluid"
-                                        style="max-width: 400px;">
-                                @else
-                                    <span>No cover image uploaded</span>
-                                @endif
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="card-footer">
-                    <a href="{{ route('projects.index') }}" class="btn btn-success">
-                        <i class="bi bi-arrow-left"></i>
-                    </a>
-                    <a href="{{ route('projects.edit', $project->slug) }}" class="btn btn-primary">
-                        <i class="bi bi-pencil-fill"></i>
-                    </a>
-                    <form action="{{ route('projects.destroy', $project->slug) }}" method="post" class="d-inline">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="btn btn-danger border-0 btn-hapus">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Project Detail</h3>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Title</th>
+                                    <td>{{ $project->title }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Visibility</th>
+                                    <td>
+                                        @if ($project->visibility === 'public')
+                                            <span class="badge bg-success">Public</span>
+                                        @else
+                                            <span class="badge bg-secondary">Private</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Cover Image</th>
+                                    <td>
+                                        @if ($project->cover_image)
+                                            <div>
+                                                <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                                    class="img-fluid img-thumbnail rounded shadow-sm"
+                                                    style="max-width: 300px; height: auto; object-fit: cover;">
+                                            </div>
+                                        @else
+                                            <span class="text-muted fst-italic">No cover image uploaded</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>{{ $project->type->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Style</th>
+                                    <td>{{ $project->style->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>City</th>
+                                    <td>{{ $project->city->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Unit Size</th>
+                                    <td>{{ $project->unit_size }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h3>Client Detail</h3>
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <td>{{ $project->client_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Client Address</th>
+                                        <td>{{ $project->client_address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Client Contact</th>
+                                        <td>{{ $project->client_contact }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <h3>Job Detail</h3>
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>Material Used</th>
+                                        <td>{{ $project->material }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Job Status</th>
+                                        <td>
+                                            @switch($project->job_status)
+                                                @case('waiting')
+                                                    <span class="badge bg-secondary">Waiting</span>
+                                                @break
+
+                                                @case('in_progress')
+                                                    <span class="badge bg-warning text-dark">In Progress</span>
+                                                @break
+
+                                                @case('in_review')
+                                                    <span class="badge bg-info text-dark">In Review</span>
+                                                @break
+
+                                                @case('done')
+                                                    <span class="badge bg-success">Done</span>
+                                                @break
+
+                                                @case('cancelled')
+                                                    <span class="badge bg-dark">Cancelled</span>
+                                                @break
+
+                                                @case('rejected')
+                                                    <span class="badge bg-danger">Rejected</span>
+                                                @break
+
+                                                @default
+                                                    <span class="badge bg-light text-dark">Unknown</span>
+                                            @endswitch
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Job Progress</th>
+                                        <td>
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar
+                                                    @if ($project->progress < 50) bg-danger
+                                                    @elseif($project->progress < 80) bg-warning
+                                                    @else bg-success @endif"
+                                                    role="progressbar" style="width: {{ $project->progress }}%;"
+                                                    aria-valuenow="{{ $project->progress }}" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    {{ $project->progress }}%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Worker</th>
+                                        <td>{!! $project->worker !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Job List</th>
+                                        <td>{!! $project->job_list !!}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <div class="card card-primary">
-                <div class="card-header">
-                    <h4 class="card-title">All Images</h4>
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex align-items-center">
+                    <h2 class="card-title mb-0 fw-bold">
+                        <i class="fas fa-file-alt me-2 text-primary"></i>Description
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div style="text-align: justify">
+                            {!! $project->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex align-items-center">
+                    <h2 class="card-title mb-0 fw-bold">
+                        <i class="fas fa-images me-2 text-primary"></i>All Images
+                    </h2>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -115,6 +233,17 @@
                 $(this).ekkoLightbox({
                     alwaysShowClose: true,
                 });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("copyLinkBtn").addEventListener("click", function() {
+            let link = this.getAttribute("data-link");
+
+            navigator.clipboard.writeText(link).then(() => {
+                // Kirim request ke server biar bisa set session
+                fetch("{{ route('copy.success') }}")
+                    .then(() => location.reload()); // reload biar alert muncul
             });
         });
     </script>

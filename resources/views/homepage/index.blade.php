@@ -1,7 +1,7 @@
 @extends('homepage.layouts.main')
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_4.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_6.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_2.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_7.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
@@ -175,8 +175,8 @@
         </div>
     </section>
 
-    {{--
-    <section class="ftco-section video-section">
+
+    {{-- <section class="ftco-section video-section">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="video-wrapper">
@@ -249,9 +249,8 @@
                                 </div>
                                 <div class="text pt-4">
                                     <h3>{{ $team->name }}</h3>
-                                    <span class="position mb-2">{{ $team->role }}</span>
-                                    {{-- {!! $team->description !!} --}}
-                                    <ul class="ftco-social d-flex justify-content-start">
+                                    <span class="position"><strong>{{ $team->role }}</strong></span>
+                                    <ul class="ftco-social d-flex justify-content-start mt-0">
                                         <li class="ftco-animate" {{ $team->linkedin ? '' : 'hidden' }}>
                                             <a href="{{ $team->linkedin }}" target="_blank"><span
                                                     class="icon-linkedin"></span></a>

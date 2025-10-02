@@ -1,7 +1,7 @@
 @extends('homepage.layouts.main')
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_2.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_8.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -20,7 +20,7 @@
     <section class="ftco-section ftc-no-pb">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/about.jpg);">
+                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/about1.jpg);">
                 </div>
                 <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">

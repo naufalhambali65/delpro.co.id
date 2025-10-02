@@ -25,7 +25,7 @@ class HomepageController extends Controller
 
     public function project()
     {
-        $projects = Project::latest()->get();
+        $projects = Project::where('visibility', 'public')->latest()->get();
         return view('homepage.project.index', compact('projects'));
     }
 

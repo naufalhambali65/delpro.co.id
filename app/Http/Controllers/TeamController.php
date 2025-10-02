@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,8 @@ class TeamController extends Controller
     {
         $title = 'Teams';
         $teams = Team::all();
-        return view('admin.teams.index', compact('title', 'teams'));
+        $newMessage = Message::where('status', 0)->count();
+        return view('admin.teams.index', compact('title', 'teams', 'newMessage'));
     }
 
     /**
@@ -24,7 +26,8 @@ class TeamController extends Controller
     public function create()
     {
         $title = 'Add Team';
-        return view('admin.teams.create', compact('title'));
+        $newMessage = Message::where('status', 0)->count();
+        return view('admin.teams.create', compact('title', 'newMessage'));
     }
 
     /**
@@ -59,7 +62,8 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         $title = 'Detail Team';
-        return view('admin.teams.show', compact('title', 'team'));
+        $newMessage = Message::where('status', 0)->count();
+        return view('admin.teams.show', compact('title', 'team', 'newMessage'));
     }
 
     /**
@@ -68,7 +72,8 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         $title = 'Update Team';
-        return view('admin.teams.edit', compact('title', 'team'));
+        $newMessage = Message::where('status', 0)->count();
+        return view('admin.teams.edit', compact('title', 'team', 'newMessage'));
     }
 
     /**

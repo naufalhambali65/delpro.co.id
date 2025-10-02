@@ -10,7 +10,7 @@
                     </h2>
                     <div class="ms-auto">
                         <a href="{{ route('teams.index') }}" class="btn btn-sm btn-primary">
-                            Back
+                            <i class="fas fa-arrow-left"></i> Back
                         </a>
                     </div>
                 </div>

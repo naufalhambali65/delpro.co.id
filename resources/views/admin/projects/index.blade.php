@@ -194,9 +194,10 @@
                             <tr class="text-center align-middle">
                                 <th>No</th>
                                 <th>Title</th>
-                                <th>Type</th>
-                                <th>Style</th>
-                                <th>City</th>
+                                <th>Client Name</th>
+                                <th>Visibility</th>
+                                <th>Job Status</th>
+                                <th>Progress</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -207,9 +208,57 @@
                                     <tr>
                                         <td class="text-center align-middle">{{ $loop->iteration }}</td>
                                         <td class="text-center align-middle">{{ $project->title }}</td>
-                                        <td class="text-center align-middle">{{ $project->type->name }}</td>
-                                        <td class="text-center align-middle">{{ $project->style->name }}</td>
-                                        <td class="text-center align-middle">{{ $project->city->name }}</td>
+                                        <td class="text-center align-middle">{{ $project->client_name }}</td>
+                                        <td class="text-center align-middle">
+                                            @if ($project->visibility === 'public')
+                                                <span class="badge bg-success">Public</span>
+                                            @else
+                                                <span class="badge bg-secondary">Private</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            @switch($project->job_status)
+                                                @case('waiting')
+                                                    <span class="badge bg-secondary">Waiting</span>
+                                                @break
+
+                                                @case('in_progress')
+                                                    <span class="badge bg-warning text-dark">In Progress</span>
+                                                @break
+
+                                                @case('in_review')
+                                                    <span class="badge bg-info text-dark">In Review</span>
+                                                @break
+
+                                                @case('done')
+                                                    <span class="badge bg-success">Done</span>
+                                                @break
+
+                                                @case('cancelled')
+                                                    <span class="badge bg-dark">Cancelled</span>
+                                                @break
+
+                                                @case('rejected')
+                                                    <span class="badge bg-danger">Rejected</span>
+                                                @break
+
+                                                @default
+                                                    <span class="badge bg-light text-dark">Unknown</span>
+                                            @endswitch
+                                        </td>
+                                        <td class="text-center align-middle">
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar
+                                                    @if ($project->progress < 50) bg-danger
+                                                    @elseif($project->progress < 80) bg-warning
+                                                    @else bg-success @endif"
+                                                    role="progressbar" style="width: {{ $project->progress }}%;"
+                                                    aria-valuenow="{{ $project->progress }}" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    {{ $project->progress }}%
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td class="text-center align-middle">
                                             <img src="{{ asset('storage/' . $project->cover_image) }}"
                                                 alt="{{ $project->title }}" class="img-thumbnail"
@@ -239,7 +288,7 @@
                                 @endforeach
                             @else
                                 <tr class="bg-light">
-                                    <td colspan="7" class="text-muted py-4 text-center">
+                                    <td colspan="8" class="text-muted py-4 text-center">
                                         <i class="fas fa-info-circle me-1"></i>
                                         You haven't added any data. Start by adding one!
                                     </td>
@@ -331,6 +380,10 @@
     </div>
 @endsection
 @section('js')
+    {{-- Bootstrap Js --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <script>
         $(function() {
             const exportButtons = ["copy", "csv", "excel", "pdf", "print"];
@@ -389,7 +442,6 @@
                 $('#typeForm').attr('action', "{{ route('types.update', ':id') }}".replace(':id', id));
                 $('#typeFormMethod').val('PUT');
                 $('#name-type').val(name);
-
                 $('#typeModal').modal('show');
             });
         });

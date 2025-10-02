@@ -20,12 +20,14 @@
           <li class="nav-item d-none d-sm-inline-block @if (Request::is('admin/teams*')) active @endif">
               <a href="{{ route('teams.index') }}" class="nav-link">Teams</a>
           </li>
+          <li class="nav-item d-none d-sm-inline-block @if (Request::is('admin/messages*')) active @endif">
+              <a href="{{ route('messages.index') }}" class="nav-link">Messages</a>
+          </li>
 
       </ul>
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-          <!-- Notifications Dropdown Menu -->
           <li class="nav-item">
               <form action="{{ route('logout') }}" method="post">
                   @csrf

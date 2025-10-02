@@ -27,6 +27,11 @@
                             <li><a href="{{ route('team') }}">Team</a></li>
                             <li><a href="{{ route('client') }}">Client</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
+                            @if (auth()->user())
+                                <li><a href="{{ route('admin') }}">Admin</a></li>
+                            @else
+                                <li><a href="{{ route('login.index') }}">Login</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -34,11 +39,10 @@
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2 mb-0">Services</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">Architectural Design</a></li>
-                            <li><a href="#">Interior Design</a></li>
-                            <li><a href="#">Exterior Design</a></li>
-                            <li><a href="#">Lighting Design</a></li>
-                            <li><a href="#">AutoCAD Service</a></li>
+                            <li><a href="{{ route('contact') }}">Architecture & Planning</a></li>
+                            <li><a href="{{ route('contact') }}">Construction & Renovation</a></li>
+                            <li><a href="{{ route('contact') }}">Interior Design & Build</a></li>
+                            <li><a href="{{ route('contact') }}">Furniture</a></li>
                         </ul>
                     </div>
                 </div>

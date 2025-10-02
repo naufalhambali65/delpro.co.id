@@ -35,8 +35,8 @@
                                         <td class="text-center align-middle">{{ $client->category->name }}</td>
                                         <td class="text-center align-middle">
                                             <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}"
-                                                class="img-thumbnail rounded-circle"
-                                                style="width: 100px; height: 100px; object-fit: cover;">
+                                                class="img-thumbnail"
+                                                style="width: 220px; height: auto; object-fit: cover;">
                                         </td>
                                         <td class="text-center align-middle">
                                             <a href="#" class="btn btn-primary btn-edit" data-id="{{ $client->id }}"
@@ -116,6 +116,10 @@
     </div>
 @endsection
 @section('js')
+    {{-- Bootstrap Js --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <script>
         $(function() {
             const exportButtons = ["copy", "csv", "excel", "pdf", "print"];
@@ -172,8 +176,8 @@
         }
 
         $(function() {
-            // Tombol "Add Client"
-            $('.btn-add').on('click', function() {
+            // Tambah client
+            $(document).on('click', '.btn-add', function() {
                 $('#clientModalLabel').text('Add Client');
                 $('#clientForm').attr('action', "{{ route('clients.store') }}");
                 $('#formMethod').val('POST');
@@ -182,7 +186,8 @@
                 $('#clientModal').modal('show');
             });
 
-            $('.btn-edit').on('click', function() {
+            // Edit client
+            $(document).on('click', '.btn-edit', function() {
                 const id = $(this).data('id');
                 const name = $(this).data('name');
                 const category = $(this).data('category');
@@ -195,7 +200,6 @@
                 $('#name').val(name);
                 $('#category_id').val(category);
 
-                // set old logo
                 $('#old_logo').val(oldLogo);
                 $('.img-preview').attr('src', logo).css('display', 'block').show();
 

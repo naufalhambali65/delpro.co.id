@@ -14,7 +14,7 @@
 @endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_2.jpg)">
+        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_13.jpg)">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -43,7 +43,8 @@
             @foreach ($datas as $categoryName => $clients)
                 <div class="row mb-4 ftco-animate">
                     <div class="col-md-12">
-                        <h4 class="mb-4 text-uppercase fw-bold">{{ $categoryName }}</h4>
+                        <h4 class="mb-4 text-uppercase fw-bold">{{ $categoryName }}
+                            {{ $categoryName == 'National' ? '/ LOCAL' : '' }}</h4>
                     </div>
 
                     @foreach ($clients as $client)
@@ -53,7 +54,7 @@
                                 <img src="{{ asset('storage/' . $client['logo']) }}" alt="{{ $client['name'] }}"
                                     class="img-fluid" style="max-height: 80px; object-fit: contain;">
                             </div>
-                            <p class="mb-4 small text-muted">{{ $client['name'] }}</p>
+                            <p class="mb-4 small text-muted text-uppercase">{{ $client['name'] }}</p>
                         </div>
                     @endforeach
                 </div>
