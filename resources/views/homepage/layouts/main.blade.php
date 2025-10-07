@@ -48,6 +48,35 @@
             /* atur tinggi logo */
             width: auto;
         }
+
+        @media (max-width: 1367px) {
+            .js-fullheight {
+                height: 50vh !important;
+                /* setengah layar di mobile */
+            }
+
+            .slider-item {
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .home-slider .slider-menu {
+                position: absolute !important;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) !important;
+                width: 100%;
+                text-align: center;
+                padding: 0 !important;
+                margin: 0 auto;
+            }
+
+            .home-slider .slider-menu .col-md-7 {
+                padding: 0 !important;
+                margin: 0 auto !important;
+            }
+
+        }
     </style>
 
     @yield('css')

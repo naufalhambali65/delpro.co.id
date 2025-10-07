@@ -25,7 +25,7 @@
         <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_14.png);">
             <div class="overlay"></div>
             <div class="container">
-                <div class="row slider-text justify-content-center align-items-center">
+                <div class="row slider-text slider-menu justify-content-center align-items-center">
 
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
                         <h1 class="mb-3 mt-5 bread"><strong>Contact</strong></h1>
