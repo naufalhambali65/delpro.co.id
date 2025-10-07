@@ -2,9 +2,19 @@
 @section('css')
     <style>
         .project-cover {
+            display: block;
+            width: 100%;
             max-width: 800px;
             height: auto;
             object-fit: contain;
+            margin: 0 auto;
+            /* biar center kalau lebih kecil dari 800px */
+        }
+
+        @media (max-width: 576px) {
+            .project-cover {
+                max-width: 100%;
+            }
         }
     </style>
 @endsection
