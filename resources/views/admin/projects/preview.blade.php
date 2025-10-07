@@ -1,8 +1,47 @@
 @extends('admin.layouts.main-preview')
+@section('css')
+    <style>
+        .hover-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .img-hover {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+@endsection
 @section('container')
+    {{-- Hero Section --}}
+    <div class="hero-section position-relative text-white mb-4"
+        style="background: url('{{ asset('storage/' . $project->cover_image) }}') center/cover no-repeat; height: 500px; border-radius: 12px; overflow: hidden;">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.55);"></div>
+        <div
+            class="hero-content position-relative z-1 d-flex flex-column justify-content-center align-items-center h-100 text-center px-3">
+            <h1 class="fw-bold">{{ $project->title }}</h1>
+            <div class="progress mt-3" style="height: 30px; width: 60%; border-radius: 20px; overflow: hidden;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated
+                    @if ($project->progress < 33) bg-danger
+                    @elseif($project->progress < 66) bg-warning
+                    @else bg-success @endif"
+                    role="progressbar" style="width: {{ $project->progress }}%;" aria-valuenow="{{ $project->progress }}"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <span class="fw-bold">{{ $project->progress }}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Detail Section --}}
     <div class="row">
         <div class="col-md-12">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm hover-card mb-4">
                 <div class="card-header d-flex align-items-center">
                     <h2 class="card-title mb-0 fw-bold">
                         <i class="fas fa-info-circle me-2 text-primary"></i>Detail
@@ -10,10 +49,10 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
+                        {{-- Left --}}
                         <div class="col-md-6">
-                            {{-- <div class="row"> --}}
                             <h3>Project Detail</h3>
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-hover">
                                 <tr>
                                     <th>Title</th>
                                     <td>{{ $project->title }}</td>
@@ -35,8 +74,9 @@
                                     <td>{{ $project->unit_size }}</td>
                                 </tr>
                             </table>
+
                             <h3>Client Detail</h3>
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-hover">
                                 <tr>
                                     <th>Client Name</th>
                                     <td>{{ $project->client_name }}</td>
@@ -51,113 +91,99 @@
                                 </tr>
                             </table>
                         </div>
+
+                        {{-- Right --}}
                         <div class="col-md-6">
-                            <div class="row">
-                                <h3>Job Detail</h3>
-                                <table class="table table-bordered table-striped">
-                                    <tr>
-                                        <th>Material Used</th>
-                                        <td>{{ $project->material }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Job Status</th>
-                                        <td>
-                                            @switch($project->job_status)
-                                                @case('waiting')
-                                                    <span class="badge bg-secondary">Waiting</span>
-                                                @break
+                            <h3>Job Detail</h3>
+                            <table class="table table-bordered table-hover">
+                                <tr>
+                                    <th>Material Used</th>
+                                    <td>{{ $project->material }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Job Status</th>
+                                    <td>
+                                        @switch($project->job_status)
+                                            @case('waiting')
+                                                <span class="badge bg-secondary">Waiting</span>
+                                            @break
 
-                                                @case('in_progress')
-                                                    <span class="badge bg-warning text-dark">In Progress</span>
-                                                @break
+                                            @case('in_progress')
+                                                <span class="badge bg-warning text-dark">In Progress</span>
+                                            @break
 
-                                                @case('in_review')
-                                                    <span class="badge bg-info text-dark">In Review</span>
-                                                @break
+                                            @case('in_review')
+                                                <span class="badge bg-info text-dark">In Review</span>
+                                            @break
 
-                                                @case('done')
-                                                    <span class="badge bg-success">Done</span>
-                                                @break
+                                            @case('done')
+                                                <span class="badge bg-success">Done</span>
+                                            @break
 
-                                                @case('cancelled')
-                                                    <span class="badge bg-dark">Cancelled</span>
-                                                @break
+                                            @case('cancelled')
+                                                <span class="badge bg-dark">Cancelled</span>
+                                            @break
 
-                                                @case('rejected')
-                                                    <span class="badge bg-danger">Rejected</span>
-                                                @break
+                                            @case('rejected')
+                                                <span class="badge bg-danger">Rejected</span>
+                                            @break
 
-                                                @default
-                                                    <span class="badge bg-light text-dark">Unknown</span>
-                                            @endswitch
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Job Progress</th>
-                                        <td>
-                                            <div class="progress" style="height: 20px;">
-                                                <div class="progress-bar
-                                                    @if ($project->progress < 50) bg-danger
-                                                    @elseif($project->progress < 80) bg-warning
-                                                    @else bg-success @endif"
-                                                    role="progressbar" style="width: {{ $project->progress }}%;"
-                                                    aria-valuenow="{{ $project->progress }}" aria-valuemin="0"
-                                                    aria-valuemax="100">
-                                                    {{ $project->progress }}%
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Worker</th>
-                                        <td>{!! $project->worker !!}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Job List</th>
-                                        <td>{!! $project->job_list !!}</td>
-                                    </tr>
-                                </table>
-                            </div>
+                                            @default
+                                                <span class="badge bg-light text-dark">Unknown</span>
+                                        @endswitch
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Worker</th>
+                                    <td>{!! $project->worker !!}</td>
+                                </tr>
+                                <tr>
+                                    <th>Job List</th>
+                                    <td>{!! $project->job_list !!}</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- Description --}}
     <div class="row">
         <div class="col-md-12">
-            <div class="card shadow-sm">
-                <div class="card-header d-flex align-items-center">
-                    <h2 class="card-title mb-0 fw-bold">
+            <div class="card shadow-sm hover-card mb-4">
+                <div class="card-header">
+                    <h2 class="card-title fw-bold">
                         <i class="fas fa-file-alt me-2 text-primary"></i>Description
                     </h2>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div style="text-align: justify">
-                            {!! $project->description !!}
-                        </div>
+                    <div style="text-align: justify">
+                        {!! $project->description !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- All Images --}}
     <div class="row">
         <div class="col-md-12">
-            <div class="card shadow-sm">
-                <div class="card-header d-flex align-items-center">
-                    <h2 class="card-title mb-0 fw-bold">
+            <div class="card shadow-sm hover-card">
+                <div class="card-header">
+                    <h2 class="card-title fw-bold">
                         <i class="fas fa-images me-2 text-primary"></i>All Images
                     </h2>
                 </div>
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row g-3">
                         @foreach ($images as $image)
                             <div class="col-sm-2">
                                 <a href="{{ asset('storage/' . $image) }}" data-toggle="lightbox"
                                     data-title="Gambar ke {{ $loop->iteration }}" data-gallery="gallery">
-                                    <img src="{{ asset('storage/' . $image) }}" class="img-fluid mb-2"
-                                        alt="{{ $project->title }}" />
+                                    <img src="{{ asset('storage/' . $image) }}"
+                                        class="img-fluid mb-2 rounded shadow-sm img-hover" alt="{{ $project->title }}" />
                                 </a>
                             </div>
                         @endforeach
@@ -167,13 +193,13 @@
         </div>
     </div>
 @endsection
+
 @section('js')
     <script>
+        // SweetAlert delete confirm
         $('.btn-hapus').on('click', function(e) {
             e.preventDefault();
-
             const form = $(this).closest('form');
-
             Swal.fire({
                 title: 'Are you sure?',
                 text: "This data will be permanently deleted.",
@@ -190,11 +216,12 @@
             });
         });
 
+        // Lightbox
         $(function() {
             $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 event.preventDefault();
                 $(this).ekkoLightbox({
-                    alwaysShowClose: true,
+                    alwaysShowClose: true
                 });
             });
         });

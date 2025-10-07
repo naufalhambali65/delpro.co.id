@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">{{ $project->title }}</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>{{ $project->title }}</strong></h1>
                         <p class="breadcrumbs">
                             <span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
                             <span>Detail Project</span>
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ftco-animate text-center">
-                    <h2 class="mb-3">{{ $project->title }}</h2>
+                    <h1 class="mb-3"><strong>{{ $project->title }}</strong></h1>
                     <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->title }}"
                         class="img-fluid project-cover">
                     {{-- Project Info --}}
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-12 ftco-animate text-center">
-                    <h2 class="mb-4">Project Galleries</h2>
+                    <h2 class="mb-4"><strong>Project Galleries</strong></h2>
                 </div>
             </div>
         </div>

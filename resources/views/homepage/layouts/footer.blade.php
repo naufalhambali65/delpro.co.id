@@ -4,7 +4,7 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <a class="navbar-brand logo-wrapper p-0 mb-3" href="{{ route('home') }}"><img
-                                src="/homepage_assets/images/logo/delpro_white.png" alt="Delpro Logo">
+                                src="/homepage_assets/images/logo/delpro_white.png" alt="Delpro Logo" style="z-index: 1">
                         </a>
                         <p style="text-align: justify">Delpro is a professional interior and architectural consulting
                             brand under PT. Delapan Jaya Propertindo. We specialize in modern design, high-quality
@@ -55,12 +55,12 @@
                                         Kalukubula, Kec. Sigi
                                         Biromaru, Kabupaten Sigi, Sulawesi Tengah
                                         94111</span></li>
-                                <li><a href="tel://+628112283338"><span class="icon icon-phone"></span><span
+                                <li><a href="https://wa.me/628112283338?text=Halo Admin Delpro aku mau tanya nih"><span class="icon icon-phone"></span><span
                                             class="text">+62 811
                                             228 3338</span></a></li>
-                                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=home@delpro.co.id"><span
+                                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=halo@delpro.co.id"><span
                                             class="icon icon-envelope"></span><span
-                                            class="text">home@delpro.co.id</span></a></li>
+                                            class="text">halo@delpro.co.id</span></a></li>
                                 <li><a href="https://delpro.co.id/"><span class="icon icon-globe"></span><span
                                             class="text">delpro.co.id</span></a></li>
                             </ul>

@@ -28,7 +28,7 @@
                 <div class="row slider-text justify-content-center align-items-center">
 
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">Contact</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>Contact</strong></h1>
                         <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
                             <span>Contact</span>
                         </p>
@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row d-flex mb-5 contact-info">
                 <div class="col-md-12 mb-4">
-                    <h2 class="h4">Contact Information</h2>
+                    <h2 class="h4"><strong>Contact Information</strong></h2>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3">
@@ -52,11 +52,13 @@
                         94111</p>
                 </div>
                 <div class="col-md-3">
-                    <p><span class="icon icon-phone"></span> <a href="tel://+628112283338">+62 811 228 3338</a></p>
+                    <p><span class="icon icon-phone"></span> <a
+                            href="https://wa.me/628112283338?text=Halo Admin Delpro aku mau tanya nih">+62 811 228 3338</a>
+                    </p>
                 </div>
                 <div class="col-md-3">
                     <p><span class="icon icon-envelope"></span> <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=home@delpro.co.id">home@delpro.co.id</a></p>
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=halo@delpro.co.id">halo@delpro.co.id</a></p>
                 </div>
                 <div class="col-md-3">
                     <p><span class="icon icon-globe"></span> <a href="https://delpro.co.id/">delpro.co.id</a></p>
@@ -72,7 +74,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 order-md-last pr-md-5">
-                    <form action="{{ route('sendEmail') }}" method="POST">
+                    <form action="{{ route('sendEmail') }}" method="POST" id="contactForm">
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"

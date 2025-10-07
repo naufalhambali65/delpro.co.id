@@ -51,6 +51,7 @@
     </style>
 
     @yield('css')
+
 </head>
 
 <body>
@@ -106,6 +107,15 @@
             })
         </script>
     @endif
+    @if (session('waLink'))
+        <script>
+            // buka tab baru setelah halaman selesai load
+            window.addEventListener('load', function() {
+                window.open("{{ session('waLink') }}");
+            });
+        </script>
+    @endif
+
 
     @yield('js')
 </body>

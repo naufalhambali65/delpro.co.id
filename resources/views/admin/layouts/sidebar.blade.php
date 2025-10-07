@@ -31,6 +31,7 @@
                           </p>
                       </a>
                   </li>
+                  <li class="nav-header">Menu</li>
                   <li class="nav-item">
                       <a href="{{ route('projects.index') }}"
                           class="nav-link {{ Request::is('admin/projects*') ? 'active' : '' }}">
@@ -67,6 +68,16 @@
                               @if ($newMessage)
                                   <span class="badge badge-danger right">{{ $newMessage }}</span>
                               @endif
+                          </p>
+                      </a>
+                  </li>
+                  <li class="nav-header">User Setting</li>
+                  <li class="nav-item">
+                      <a href="{{ route('changePass.index') }}"
+                          class="nav-link {{ Request::is('admin/changePassword*') ? 'active' : '' }}">
+                          <i class="nav-icon fas fa-user-lock"></i>
+                          <p>
+                              Change Password
                           </p>
                       </a>
                   </li>

@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">Client</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>Client</strong></h1>
                         <p class="breadcrumbs">
                             <span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
                             <span>Client</span>
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h1 class="mb-4">Our Clients</h1>
+                    <h1 class="mb-4"><strong>Our Clients</strong></h1>
                     <p class="text-muted">We are proud to collaborate with our valued clients across various industries,
                         building lasting partnerships and delivering impactful solutions.</p>
                 </div>
@@ -43,14 +43,13 @@
             @foreach ($datas as $categoryName => $clients)
                 <div class="row mb-4 ftco-animate">
                     <div class="col-md-12">
-                        <h4 class="mb-4 text-uppercase fw-bold">{{ $categoryName }}
-                            {{ $categoryName == 'National' ? '/ LOCAL' : '' }}</h4>
+                        <h4 class="mb-4 text-uppercase"><strong>{{ $categoryName }}
+                                {{ $categoryName == 'National' ? '/ LOCAL' : '' }} BRAND</strong></h4>
                     </div>
 
                     @foreach ($clients as $client)
-                        <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                            <div
-                                class="client-logo p-3 border rounded shadow-sm h-100 d-flex align-items-center justify-content-center">
+                        <div class="col-6 col-md-3 col-lg-2 mb-5 text-center">
+                            <div class="client-logo p-3 h-100 d-flex align-items-center justify-content-center">
                                 <img src="{{ asset('storage/' . $client['logo']) }}" alt="{{ $client['name'] }}"
                                     class="img-fluid" style="max-height: 80px; object-fit: contain;">
                             </div>

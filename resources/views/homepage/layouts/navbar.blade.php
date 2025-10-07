@@ -16,8 +16,8 @@
                         class="nav-link">About</a></li>
                 <li class="nav-item @if (Request::is('project*')) active @endif"><a href="{{ route('project') }}"
                         class="nav-link">Project</a></li>
-                <li class="nav-item @if (Request::is('team')) active @endif"><a href="{{ route('team') }}"
-                        class="nav-link">Team</a></li>
+                <li class="nav-item @if (Request::is('people')) active @endif"><a href="{{ route('team') }}"
+                        class="nav-link">People</a></li>
                 <li class="nav-item @if (Request::is('client')) active @endif"><a href="{{ route('client') }}"
                         class="nav-link">Client</a></li>
                 <li class="nav-item @if (Request::is('contact')) active @endif"><a href="{{ route('contact') }}"

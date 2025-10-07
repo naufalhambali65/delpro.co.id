@@ -12,33 +12,61 @@
             /* sudut membulat elegan */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
+
+        .side-image {
+            position: fixed;
+            /* selalu nempel di kanan */
+            top: 0;
+            /* mulai dari atas sedikit biar gak nutup navbar */
+            right: 0;
+            height: 100vh;
+            /* penuh sampai footer */
+            width: 300px;
+            /* atur lebar sesuai kebutuhan */
+            object-fit: cover;
+            z-index: -1;
+            object-position: right;
+            /* biar di belakang konten */
+            /* opacity: 0.1; */
+            /* transparan biar elegan */
+        }
+
+
+        @media (max-width: 991.98px) {
+            .side-image {
+                display: none;
+                /* sembunyikan di layar kecil */
+            }
+        }
     </style>
 @endsection
 @section('container')
-    <section class="home-slider js-fullheight owl-carousel">
+    <img src="/homepage_assets/images/bg_11.jpg" alt="Side Decoration" class="side-image">
+    {{-- <section class="home-slider js-fullheight owl-carousel">
         <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_12.jpg)">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">Team</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>People</strong></h1>
                         <p class="breadcrumbs">
                             <span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
-                            <span>Team</span>
+                            <span>People</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="ftco-section py-5">
         <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
+            <br>
+            <div class="row justify-content-center my-5 pb-3">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h1 class="mb-4">Meet Our Team</h1>
+                    <h1 class="mb-4"><strong>Meet Our People</strong></h1>
                     <p class="text-muted">
-                        We attract, develop, and retain the best talent among the industry in our organization.
-                        Meet our team who hold the leadership positions:
+                        We attract, develop, and retain the best talent among the industry in our organization. Meet our
+                        team who hold the leadership positions:
                     </p>
                 </div>
             </div>
@@ -50,8 +78,8 @@
                             class="img-fluid team-photo">
                     </div>
                     <div class="col-md-9">
-                        <h4 class="fw-bold mb-1">{{ $team->name }} <span class="text-warning">|
-                                <strong>{{ $team->role }}</strong></span>
+                        <h4 class="fw-bold mb-1"><strong>{{ $team->name }}</strong> |
+                            {{ $team->role }}
                         </h4>
                         <div class="fst-italic text-muted" style="text-align: justify">
                             {!! $team->description !!}

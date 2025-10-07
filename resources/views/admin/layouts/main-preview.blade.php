@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
-    <title>Dashboard</title>
+    <title>DELPRO | Project Preview</title>
+    <link rel="icon" type="image/png" href="{{ asset('/homepage_assets/images/logo/favicon.png') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -67,47 +67,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
-        .help-button {
-            position: fixed;
-            bottom: 25px;
-            right: 40px;
-            background-color: #484848;
-            color: #ffffff;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 15px;
-            font-size: 16px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 1000;
+        .logo-wrapper {
+            position: relative;
         }
 
-        .help-button:hover {
-            background-color: #100d11;
-        }
-    </style>
-    <style>
-        .login-card {
-            background-color: rgba(255, 255, 255, 0.75);
-            border-radius: 15px;
-        }
-
-        .logo-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .logo-title span {
-            color: white;
-            background-color: #198754;
-            /* Bootstrap success */
-            padding: 8px 8px;
-            border-radius: 6px;
-        }
-
-        .logo-container {
-            margin-bottom: 20px;
+        .logo-wrapper img {
+            position: absolute;
+            z-index: -1;
+            top: -150px;
+            /* naikkan logo ke atas navbar */
+            left: -50px;
+            /* bisa kamu ganti ke center kalau mau */
+            height: 300px;
+            /* atur tinggi logo */
+            width: auto;
         }
     </style>
 
@@ -122,7 +95,21 @@
         @include('admin.layouts.sidebar') --}}
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper m-0">
-            @include('admin.layouts.header')
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2 align-items-center my-3">
+                        {{-- Kolom Kiri (Logo) --}}
+                        <div class="col-sm-2" style="position: absolute">
+                            <img src="/homepage_assets/images/logo/delpro.png" alt="Delpro Logo"
+                                style="height:300px; width:auto; object-fit:contain; position:relative;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- /.content-header -->
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">

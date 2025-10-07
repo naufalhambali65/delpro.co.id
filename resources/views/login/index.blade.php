@@ -16,7 +16,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center center/cover;
+            background: url("/homepage_assets/images/bg_12.jpg") no-repeat center center/cover;
             position: relative;
             font-family: "Work Sans", sans-serif;
         }

@@ -36,8 +36,16 @@ class MessageController extends Controller
 
 
         Message::create($validatedData);
+        $nomor = "628112283338"; // ganti dengan nomor WA kamu
+        $pesan = urlencode("Halo, saya {$validatedData['name']} ({$validatedData['email']})\n\n"
+        ."Subjek: {$validatedData['subject']}\n\n"
+        ."Pesan:\n{$validatedData['message']}");
 
-        return redirect( route('contact') )->with('success', 'Your email has been sent successfully!');
+        $waLink = "https://wa.me/{$nomor}?text={$pesan}";
+
+        return redirect( route('contact') )->with('waLink', $waLink);
+        // return redirect()->away($waLink);
+        // return response()->json(['waLink' => $waLink]);
     }
 
     public function updateStatus(Message $message)

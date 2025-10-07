@@ -7,7 +7,7 @@
                 <div class="row slider-text justify-content-center align-items-center">
 
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">About</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>About</strong></h1>
                         <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
                             <span>About</span>
                         </p>
@@ -25,8 +25,9 @@
                 <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
                         <div class="pl-md-5 ml-md-5">
-                            <span class="subheading">About Us</span>
-                            <h2 class="mb-4">Delpro – Professional Interior & Architectural Consultant</h2>
+                            <span class="subheading"><strong>About Us</strong></span>
+                            <h2 class="mb-4"><strong>Delpro – Professional Interior & Architectural Consultant</strong>
+                            </h2>
                         </div>
                     </div>
                     <div class="pl-md-5 ml-md-5 mb-5" style="text-align: justify">

@@ -65,7 +65,7 @@
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread">Project</h1>
+                        <h1 class="mb-3 mt-5 bread"><strong>Project</strong></h1>
                         <p class="breadcrumbs">
                             <span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
                             <span>Project</span>
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h1 class="mb-4">Our Projects</h1>
+                    <h1 class="mb-4"><strong>Our Projects</strong></h1>
                     <p class="text-muted">Each project tells a story of collaboration, creativity, and meaningful impact.
                         Take a look at what
                         we’ve built together with our partners.</p>

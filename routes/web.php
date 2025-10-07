@@ -11,6 +11,7 @@ use App\Http\Controllers\StyleController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
@@ -18,7 +19,7 @@ Route::get('/about', [HomepageController::class, 'about'])->name('about');
 Route::get('/project/{project}', [HomepageController::class, 'detailProject'])->name('project.detail');
 Route::get('/project', [HomepageController::class, 'project'])->name('project');
 Route::get('/contact', [HomepageController::class, 'contact'])->name('contact');
-Route::get('/team', [HomepageController::class, 'team'])->name('team');
+Route::get('/people', [HomepageController::class, 'team'])->name('team');
 Route::get('/client', [HomepageController::class, 'client'])->name('client');
 
 
@@ -39,6 +40,9 @@ Route::resource('/admin/projects', ProjectController::class)->middleware('auth')
 Route::resource('/admin/types', TypeController::class)->middleware('auth');
 Route::resource('/admin/styles', StyleController::class)->middleware('auth');
 Route::resource('/admin/cities', CityController::class)->middleware('auth');
+
+Route::get('/admin/changePassword', [UserController::class, 'index'])->middleware('auth')->name('changePass.index');
+Route::put('/admin/changePassword', [UserController::class, 'changePass'])->middleware('auth')->name('changePass.update');
 
 Route::get('/admin/messages', [MessageController::class, 'index'])->middleware('auth')->name('messages.index');
 Route::delete('/admin/messages/{message}', [MessageController::class, 'destroy'])->middleware('auth')->name('messages.destroy');

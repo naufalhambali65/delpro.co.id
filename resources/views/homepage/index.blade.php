@@ -7,8 +7,9 @@
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
                     data-scrollax-parent="true">
                     <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We Create Elegant
-                            & Functional Interiors</h1>
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>We Create
+                                Elegant
+                                & Functional Interiors</strong></h1>
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Delpro is the interior brand of
                             PT. Delapan Jaya Propertindo, specializing in modern design, premium detailing, and comfortable
                             spaces for your home, office, and commercial properties.</p>
@@ -26,8 +27,9 @@
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
                     data-scrollax-parent="true">
                     <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Bringing Your
-                            Dream Space to Life</h1>
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Bringing
+                                Your
+                                Dream Space to Life</strong></h1>
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We design and execute every
                             interior detail with thoughtful planning, creativity, and precision to deliver comfort and
                             beauty in every space.</p>
@@ -51,7 +53,7 @@
                             <span class="flaticon-compass-symbol"></span>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Architecture & Planning</h3>
+                            <h3 class="heading"><strong>Architecture & Planning</strong></h3>
                             <p style="text-align: justify">Comprehensive planning services for residential and commercial
                                 buildings, delivered by
                                 experienced professionals.</p>
@@ -66,7 +68,7 @@
                             <span class="flaticon-layers"></span>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Construction & Renovation</h3>
+                            <h3 class="heading"><strong>Construction & Renovation</strong></h3>
                             <p style="text-align: justify">From inspection and cost estimation to execution, we ensure
                                 precise and reliable services.
                             </p>
@@ -81,7 +83,7 @@
                             <span class="flaticon-idea"></span>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Interior Design & Build</h3>
+                            <h3 class="heading"><strong>Interior Design & Build</strong></h3>
                             <p style="text-align: justify">Dedicated to creating stylish and comfortable spaces with expert
                                 craftsmanship.</p>
                         </div>
@@ -95,13 +97,14 @@
     <section class="ftco-section ftc-no-pb">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/about.jpg);">
+                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/bg_8.jpg);">
                 </div>
                 <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
                         <div class="pl-md-5 ml-md-5">
-                            <span class="subheading">About Us</span>
-                            <h2 class="mb-4">Delpro – Professional Interior & Architectural Consultant</h2>
+                            <span class="subheading"><strong>About Us</strong></span>
+                            <h2 class="mb-4"><strong>Delpro – Professional Interior & Architectural Consultant</strong>
+                            </h2>
                         </div>
                     </div>
                     <div class="pl-md-5 ml-md-5 mb-5" style="text-align: justify">
@@ -130,8 +133,8 @@
                 <div class="col-lg-4">
                     <div class="heading-section pl-md-5 heading-section-white">
                         <div class="pl-md-5 ml-md-5 ftco-animate">
-                            <span class="subheading">Delpro</span>
-                            <h2 class="mb-4">Interesting Facts About Us</h2>
+                            <span class="subheading"><strong>Delpro</strong></span>
+                            <h2 class="mb-4"><strong>Interesting Facts About Us</strong></h2>
                         </div>
                     </div>
                 </div>
@@ -195,7 +198,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center mb-5 pb-3">
                 <div class="col-md-8 heading-section ftco-animate text-center">
-                    <h2 class="mb-4">Our Client</h2>
+                    <h2 class="mb-4"><strong>Our Client</strong></h2>
                     <p class="text-muted">We are proud to collaborate with our valued clients across various industries,
                         building lasting partnerships and delivering impactful solutions.</p>
                 </div>
@@ -233,7 +236,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-8 heading-section ftco-animate text-center">
-                    <h2 class="mb-4">Our Team</h2>
+                    <h2 class="mb-4"><strong>Our People</strong></h2>
                     <p class="text-muted">We attract, develop, and retain the best talent among the industry in our
                         organization.
                         Meet our team who hold the leadership positions:</p>
