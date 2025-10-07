@@ -51,7 +51,7 @@
 
         @media (max-width: 1367px) {
             .js-fullheight {
-                height: 50vh !important;
+                height: 60vh !important;
                 /* setengah layar di mobile */
             }
 
