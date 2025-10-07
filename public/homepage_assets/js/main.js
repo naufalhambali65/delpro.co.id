@@ -15,12 +15,27 @@ AOS.init({
         scrollProperty: "scroll",
     });
 
+    // var fullHeight = function () {
+    //     $(".js-fullheight").css("height", $(window).height());
+    //     $(window).resize(function () {
+    //         $(".js-fullheight").css("height", $(window).height());
+    //     });
+    // };
+    // fullHeight();
+
     var fullHeight = function () {
-        $(".js-fullheight").css("height", $(window).height());
-        $(window).resize(function () {
-            $(".js-fullheight").css("height", $(window).height());
-        });
+        function setHeight() {
+            if ($(window).width() > 768) {
+                $(".js-fullheight").css("height", $(window).height());
+            } else {
+                $(".js-fullheight").css("height", "auto");
+            }
+        }
+
+        setHeight();
+        $(window).resize(setHeight);
     };
+
     fullHeight();
 
     // loader
