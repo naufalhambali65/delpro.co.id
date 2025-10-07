@@ -45,7 +45,7 @@
                     {{-- Project Info --}}
                     <div class="row justify-content-center mt-4">
                         <div class="col-md-8">
-                            <div class="row d-flex justify-content-between">
+                            <div class="row d-flex justify-content-between mx-3">
                                 <div class="mb-3">
                                     <p class="mb-0"><i class="icon-layers"></i> Type: {{ $project->type->name ?? '-' }}
                                     </p>

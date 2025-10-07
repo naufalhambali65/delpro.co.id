@@ -245,7 +245,7 @@
             <div class="row">
                 @if ($teams->count() > 0)
                     @foreach ($teams as $team)
-                        <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="col-md-6 col-lg-3 ftco-animate d-flex justify-content-center">
                             <div class="staff">
                                 <div class="img"
                                     style="background-image: url({{ asset('storage/public/' . $team->photo) }});">
