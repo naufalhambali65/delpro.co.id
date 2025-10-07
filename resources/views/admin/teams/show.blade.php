@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 text-center mb-4">
-                            <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
+                            <img src="{{ asset('storage/public/' . $team->photo) }}" alt="{{ $team->name }}"
                                 class=" img-thumbnail" style="width: 150px; height: 200px; object-fit: cover;">
                             <h5 class="mt-3 mb-0 fw-bold">{{ $team->name }}</h5>
                             <p class="text-muted">{{ $team->role }}</p>

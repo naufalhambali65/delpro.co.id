@@ -50,7 +50,7 @@
                     @foreach ($clients as $client)
                         <div class="col-6 col-md-3 col-lg-2 mb-5 text-center">
                             <div class="client-logo p-3 h-100 d-flex align-items-center justify-content-center">
-                                <img src="{{ asset('storage/' . $client['logo']) }}" alt="{{ $client['name'] }}"
+                                <img src="{{ asset('storage/public/' . $client['logo']) }}" alt="{{ $client['name'] }}"
                                     class="img-fluid" style="max-height: 80px; object-fit: contain;">
                             </div>
                             <p class="mb-4 small text-muted text-uppercase">{{ $client['name'] }}</p>

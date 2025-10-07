@@ -132,7 +132,7 @@
                             <div class="mb-3">
                                 <label for="cover_image" class="form-label">Cover Image</label>
                                 @if ($project->cover_image)
-                                    <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                    <img src="{{ asset('storage/public/' . $project->cover_image) }}"
                                         class="img-preview img-fluid mb-3 col-sm-5 d-block" style="object-fit: cover;">
                                 @else
                                     <img class="img-preview img-fluid mb-3 col-sm-5">

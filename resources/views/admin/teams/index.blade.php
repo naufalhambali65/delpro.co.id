@@ -33,8 +33,8 @@
                                         <td class="text-center align-middle">{{ $team->name }}</td>
                                         <td class="text-center align-middle">{{ $team->role }}</td>
                                         <td class="text-center align-middle">
-                                            <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
-                                                class="img-thumbnail"
+                                            <img src="{{ asset('storage/public/' . $team->photo) }}"
+                                                alt="{{ $team->name }}" class="img-thumbnail"
                                                 style="width: 100px; height: 120px; object-fit: cover;">
                                         </td>
                                         <td class="text-center align-middle">

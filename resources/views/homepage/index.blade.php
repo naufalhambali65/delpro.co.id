@@ -212,7 +212,7 @@
                                     <div class="user-img "
                                         style="width: 100%;
                                     min-height: 50px;
-                                    background-image: url('{{ asset('storage/' . $client->logo) }}');
+                                    background-image: url('{{ asset('storage/public/' . $client->logo) }}');
                                     background-size: contain;
                                     background-position: center;
                                     background-repeat: no-repeat;">
@@ -248,7 +248,7 @@
                         <div class="col-md-6 col-lg-3 ftco-animate">
                             <div class="staff">
                                 <div class="img"
-                                    style="background-image: url({{ asset('storage/' . $team->photo) }});">
+                                    style="background-image: url({{ asset('storage/public/' . $team->photo) }});">
                                 </div>
                                 <div class="text pt-4">
                                     <h3>{{ $team->name }}</h3>

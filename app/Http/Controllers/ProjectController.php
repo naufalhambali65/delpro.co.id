@@ -131,7 +131,7 @@ class ProjectController extends Controller
                         'type' => File::mimeType($path),
                     ],
                     'metadata' => [
-                        'poster' => asset('storage/' . $img),
+                        'poster' => asset('storage/public/' . $img),
                     ],
                 ],
             ];

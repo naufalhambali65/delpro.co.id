@@ -74,7 +74,7 @@
             @foreach ($teams as $team)
                 <div class="row align-items-center ftco-animate my-3">
                     <div class="col-md-3">
-                        <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
+                        <img src="{{ asset('storage/public/' . $team->photo) }}" alt="{{ $team->name }}"
                             class="img-fluid team-photo">
                     </div>
                     <div class="col-md-9">
