@@ -43,7 +43,7 @@
                                 <div class="mb-3">
                                     <label for="photo" class="form-label">Photo</label><br>
                                     @if ($team->photo)
-                                        <img src="{{ asset('storage/public/' . $team->photo) }}"
+                                        <img src="{{ asset('storage/' . $team->photo) }}"
                                             class="img-preview img-fluid mb-3 col-sm-5 d-block" style="object-fit: cover;">
                                     @else
                                         <img class="img-preview img-fluid mb-3 col-sm-5">
@@ -53,16 +53,6 @@
                                         id="photo" name="photo" onchange="previewImage()">
                                     @error('photo')
                                         <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
-                                    <input id="description" type="hidden" name="description"
-                                        value="{{ old('description', $team->description) }}">
-                                    <trix-editor input="description"></trix-editor>
-                                    @error('description')
-                                        <p class="text-danger"><small>{{ $message }}</small></p>
                                     @enderror
                                 </div>
                             </div>
@@ -116,11 +106,27 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <!-- Action Buttons -->
-                            <div class="mb-3 d-flex justify-content-end">
-                                <a href="{{ route('teams.index') }}" class="btn btn-xs btn-primary">Back</a>
-                                <button type="submit" class="btn btn-success ms-2">Update</button>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description (English)</label>
+                                    <input id="description" type="hidden" name="description"
+                                        value="{{ old('description', $team->description) }}">
+                                    <trix-editor input="description"></trix-editor>
+                                    @error('description')
+                                        <p class="text-danger"><small>{{ $message }}</small></p>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description_id" class="form-label">Description (Indonesia)</label>
+                                    <input id="description_id" type="hidden" name="description_id"
+                                        value="{{ old('description_id', $description_id) }}">
+                                    <trix-editor input="description_id"></trix-editor>
+                                    @error('description_id')
+                                        <p class="text-danger"><small>{{ $message }}</small></p>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                     </div>

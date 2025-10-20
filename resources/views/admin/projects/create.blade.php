@@ -137,17 +137,6 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
-                                    <input id="description" type="hidden" name="description"
-                                        value="{{ old('description') }}">
-                                    <trix-editor input="description"></trix-editor>
-                                    @error('description')
-                                        <p class="text-danger">
-                                            <small>{{ $message }}</small>
-                                        </p>
-                                    @enderror
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -272,6 +261,32 @@
                                     <input id="job_list" type="hidden" name="job_list" value="{{ old('job_list') }}">
                                     <trix-editor input="job_list"></trix-editor>
                                     @error('job_list')
+                                        <p class="text-danger">
+                                            <small>{{ $message }}</small>
+                                        </p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description (English)</label>
+                                    <input id="description" type="hidden" name="description"
+                                        value="{{ old('description') }}">
+                                    <trix-editor input="description"></trix-editor>
+                                    @error('description')
+                                        <p class="text-danger">
+                                            <small>{{ $message }}</small>
+                                        </p>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description_id" class="form-label">Description (Indonesia)</label>
+                                    <input id="description_id" type="hidden" name="description_id"
+                                        value="{{ old('description_id') }}">
+                                    <trix-editor input="description_id"></trix-editor>
+                                    @error('description_id')
                                         <p class="text-danger">
                                             <small>{{ $message }}</small>
                                         </p>

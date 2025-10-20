@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Message;
 use App\Models\Project;
+use App\Models\ProjectTranslation;
 use App\Models\Style;
 use App\Models\TemporaryFile;
 use App\Models\Type;
@@ -83,7 +84,18 @@ class ProjectController extends Controller
         $validatedData['images'] = json_encode($images);
 
 
-        Project::create($validatedData);
+        $project = Project::create($validatedData);
+
+        ProjectTranslation::create([
+            'project_id' => $project->id,
+            'locale' => 'id',
+            'description' => $request['description_id']
+        ]);
+        ProjectTranslation::create([
+            'project_id' => $project->id,
+            'locale' => 'en',
+            'description' => $request['description']
+        ]);
 
         return redirect( route('projects.index') )->with('success', 'New data added successfully.');
     }
@@ -97,7 +109,11 @@ class ProjectController extends Controller
         $encryptedSlug = Crypt::encryptString($project->slug);
         $images = json_decode($project->images ?? '[]', true);
         $newMessage = Message::where('status', 0)->count();
-        return view('admin.projects.show', compact('title', 'project', 'images', 'encryptedSlug', 'newMessage'));
+        $description_id = $project->translations->where('locale', 'id')->first()->description ?? '';
+        $description_en = $project->translations->where('locale', 'en')->first()->description ?? '';
+        return view('admin.projects.show', compact(
+            'title', 'project', 'images', 'encryptedSlug', 'newMessage', 'description_id', 'description_en'
+        ));
     }
 
     /**
@@ -111,6 +127,8 @@ class ProjectController extends Controller
         $cities = City::all();
         $images = json_decode($project->images ?? '[]', true);
         $newMessage = Message::where('status', 0)->count();
+
+        $description_id = $project->translations->where('locale', 'id')->first()->description ?? '';
 
         $pondFiles = array_map(function ($img) {
             $path = storage_path('app/public/' . $img);
@@ -131,12 +149,14 @@ class ProjectController extends Controller
                         'type' => File::mimeType($path),
                     ],
                     'metadata' => [
-                        'poster' => asset('storage/public/' . $img),
+                        'poster' => asset('storage/' . $img),
                     ],
                 ],
             ];
         }, $images);
-        return view('admin.projects.edit', compact('title', 'project', 'styles', 'types', 'cities', 'pondFiles', 'newMessage'));
+        return view('admin.projects.edit', compact(
+            'title', 'project', 'styles', 'types', 'cities', 'pondFiles', 'newMessage', 'description_id'
+        ));
     }
 
     /**
@@ -192,6 +212,16 @@ class ProjectController extends Controller
 
         Project::where('slug', $project->slug)->update($validatedData);
 
+        ProjectTranslation::updateOrCreate(
+            ['project_id' => $project->id, 'locale' => 'id'],
+            ['description' => $request['description_id']]
+        );
+
+        ProjectTranslation::updateOrCreate(
+            ['project_id' => $project->id, 'locale' => 'en'],
+            ['description' => $request['description']]
+        );
+
         return redirect(route('projects.index'))->with('success', 'Data updated successfully.');
     }
 
@@ -218,7 +248,9 @@ class ProjectController extends Controller
             $project = Project::where('slug', $slug)->firstOrFail();
             $images = json_decode($project->images ?? '[]', true);
 
-            return view('admin.projects.preview', compact('title', 'project', 'images'));
+            $description_en = $project->translations->where('locale', 'en')->first()->description ?? '';
+
+            return view('admin.projects.preview', compact('title', 'project', 'images', 'description_en'));
             } catch (\Exception $e) {
             abort(404, 'Invalid link');
         }

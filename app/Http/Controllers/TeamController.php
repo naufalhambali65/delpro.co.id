@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use App\Models\Team;
+use App\Models\TeamTranslation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App;
 
 class TeamController extends Controller
 {
+    public function __construct()
+    {
+        App::setLocale('en');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -51,7 +57,18 @@ class TeamController extends Controller
             $validatedData['photo'] = $request->file('photo')->store('teams-photo', 'public');
         }
 
-        Team::create($validatedData);
+        $team = Team::create($validatedData);
+
+        TeamTranslation::create([
+            'team_id' => $team->id,
+            'locale' => 'id',
+            'description' => $request['description_id']
+        ]);
+        TeamTranslation::create([
+            'team_id' => $team->id,
+            'locale' => 'en',
+            'description' => $request['description']
+        ]);
 
         return redirect( route('teams.index') )->with('success', 'New data added successfully.');
     }
@@ -63,7 +80,9 @@ class TeamController extends Controller
     {
         $title = 'Detail Team';
         $newMessage = Message::where('status', 0)->count();
-        return view('admin.teams.show', compact('title', 'team', 'newMessage'));
+        $description_id = $team->translations->where('locale', 'id')->first()->description ?? '';
+        $description_en = $team->translations->where('locale', 'en')->first()->description ?? '';
+        return view('admin.teams.show', compact('title', 'team', 'newMessage', 'description_id', 'description_en'));
     }
 
     /**
@@ -73,7 +92,8 @@ class TeamController extends Controller
     {
         $title = 'Update Team';
         $newMessage = Message::where('status', 0)->count();
-        return view('admin.teams.edit', compact('title', 'team', 'newMessage'));
+        $description_id = $team->translations->where('locale', 'id')->first()->description ?? '';
+        return view('admin.teams.edit', compact('title', 'team', 'newMessage', 'description_id'));
     }
 
     /**
@@ -101,6 +121,16 @@ class TeamController extends Controller
         }
 
         Team::where('id', $team->id)->update($validatedData);
+
+        TeamTranslation::updateOrCreate(
+            ['team_id' => $team->id, 'locale' => 'id'],
+            ['description' => $request['description_id']]
+        );
+
+        TeamTranslation::updateOrCreate(
+            ['team_id' => $team->id, 'locale' => 'en'],
+            ['description' => $request['description']]
+        );
 
         return redirect( route('teams.index') )->with('success', 'Data updated successfully.');
     }

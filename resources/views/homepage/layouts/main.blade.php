@@ -9,6 +9,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 
     <link rel="stylesheet" href="/homepage_assets/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="/homepage_assets/css/animate.css">

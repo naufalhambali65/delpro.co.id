@@ -20,7 +20,7 @@
 @section('container')
     {{-- Hero Section --}}
     <div class="hero-section position-relative text-white mb-4"
-        style="background: url('{{ asset('storage/public/' . $project->cover_image) }}') center/cover no-repeat; height: 500px; border-radius: 12px; overflow: hidden;">
+        style="background: url('{{ asset('storage/' . $project->cover_image) }}') center/cover no-repeat; height: 500px; border-radius: 12px; overflow: hidden;">
         <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.55);"></div>
         <div
             class="hero-content position-relative z-1 d-flex flex-column justify-content-center align-items-center h-100 text-center px-3">
@@ -160,7 +160,7 @@
                 </div>
                 <div class="card-body">
                     <div style="text-align: justify">
-                        {!! $project->description !!}
+                        {!! $description_en !!}
                     </div>
                 </div>
             </div>
@@ -180,9 +180,9 @@
                     <div class="row g-3">
                         @foreach ($images as $image)
                             <div class="col-sm-2">
-                                <a href="{{ asset('storage/public/' . $image) }}" data-toggle="lightbox"
+                                <a href="{{ asset('storage/' . $image) }}" data-toggle="lightbox"
                                     data-title="Gambar ke {{ $loop->iteration }}" data-gallery="gallery">
-                                    <img src="{{ asset('storage/public/' . $image) }}"
+                                    <img src="{{ asset('storage/' . $image) }}"
                                         class="img-fluid mb-2 rounded shadow-sm img-hover" alt="{{ $project->title }}" />
                                 </a>
                             </div>

@@ -27,4 +27,21 @@ class Project extends Model
     {
         return $this->belongsTo(Type::class);
     }
+
+    public function translations()
+    {
+        return $this->hasMany(ProjectTranslation::class);
+    }
+
+    public function getDescriptionAttribute($value)
+    {
+        $locale = app()->getLocale();
+        if($locale == 'en') {
+            return $value;
+        } else {
+            $translation = $this->translations->where('locale', $locale)->first();
+        }
+
+        return $translation->description ?? $value;
+    }
 }

@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\ClientController;
@@ -12,9 +16,23 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+
+Route::get('lang/{locale}', function ($locale) {
+    $allowed = ['id', 'en'];
+    if (! in_array($locale, $allowed)) {
+        abort(404);
+    }
+
+    Session::put('locale', $locale);
+    Cookie::queue('locale', $locale, 60 * 24 * 30);
+
+    $intended = url()->previous() ?: '/';
+    return Redirect::to($intended);
+})->name('lang.switch');
+
 Route::get('/about', [HomepageController::class, 'about'])->name('about');
 Route::get('/project/{project}', [HomepageController::class, 'detailProject'])->name('project.detail');
 Route::get('/project', [HomepageController::class, 'project'])->name('project');

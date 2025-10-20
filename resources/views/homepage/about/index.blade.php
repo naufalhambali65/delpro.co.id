@@ -7,9 +7,10 @@
                 <div class="row slider-text slider-menu justify-content-center align-items-center">
 
                     <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                        <h1 class="mb-3 mt-5 bread"><strong>About</strong></h1>
-                        <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home</a></span>
-                            <span>About</span>
+                        <h1 class="mb-3 mt-5 bread"><strong>{{ __('about.title') }}</strong></h1>
+                        <p class="breadcrumbs">
+                            <span class="mr-2"><a href="{{ route('home') }}">{{ __('about.home') }}</a></span>
+                            <span>{{ __('about.title') }}</span>
                         </p>
                     </div>
 
@@ -25,24 +26,16 @@
                 <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
                         <div class="pl-md-5 ml-md-5">
-                            <span class="subheading"><strong>About Us</strong></span>
-                            <h2 class="mb-4"><strong>Delpro – Professional Interior & Architectural Consultant</strong>
-                            </h2>
+                            <span class="subheading"><strong>{{ __('about.subheading') }}</strong></span>
+                            <h2 class="mb-4"><strong>{{ __('about.heading') }}</strong></h2>
                         </div>
                     </div>
                     <div class="pl-md-5 ml-md-5 mb-5" style="text-align: justify">
-                        <p>The demand for high-quality buildings has become a top priority, making it unsurprising that
-                            people are willing to invest significantly in educational institutions, offices, and residential
-                            homes.</p>
+                        <p>{{ __('about.paragraph1') }}</p>
 
-                        <p>We are proud to introduce <strong>Delpro</strong>, operating under <strong>PT Delapan Jaya
-                                Propertindo</strong>.
-                            With full
-                            commitment, we are dedicated to assisting clients in creating comfortable, functional, and
-                            aesthetically pleasing spaces for both living and working.</p>
+                        <p>{!! __('about.paragraph2') !!}</p>
 
-                        <p>Our team is committed to excellence in design, construction, and delivering the finest experience
-                            to every client.</p>
+                        <p>{{ __('about.paragraph3') }}</p>
                     </div>
                 </div>
             </div>

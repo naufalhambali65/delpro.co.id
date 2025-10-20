@@ -132,7 +132,7 @@
                             <div class="mb-3">
                                 <label for="cover_image" class="form-label">Cover Image</label>
                                 @if ($project->cover_image)
-                                    <img src="{{ asset('storage/public/' . $project->cover_image) }}"
+                                    <img src="{{ asset('storage/' . $project->cover_image) }}"
                                         class="img-preview img-fluid mb-3 col-sm-5 d-block" style="object-fit: cover;">
                                 @else
                                     <img class="img-preview img-fluid mb-3 col-sm-5">
@@ -144,17 +144,6 @@
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <input id="description" type="hidden" name="description"
-                                    value="{{ old('description', $project->description) }}">
-                                <trix-editor input="description"></trix-editor>
-                                @error('description')
-                                    <p class="text-danger">
-                                        <small>{{ $message }}</small>
-                                    </p>
                                 @enderror
                             </div>
                         </div>
@@ -284,6 +273,32 @@
                                     value="{{ old('job_list', $project->job_list) }}">
                                 <trix-editor input="job_list"></trix-editor>
                                 @error('job_list')
+                                    <p class="text-danger">
+                                        <small>{{ $message }}</small>
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description (English)</label>
+                                <input id="description" type="hidden" name="description"
+                                    value="{{ old('description', $project->description) }}">
+                                <trix-editor input="description"></trix-editor>
+                                @error('description')
+                                    <p class="text-danger">
+                                        <small>{{ $message }}</small>
+                                    </p>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="description_id" class="form-label">Description (Indonesia)</label>
+                                <input id="description_id" type="hidden" name="description_id"
+                                    value="{{ old('description_id', $description_id) }}">
+                                <trix-editor input="description_id"></trix-editor>
+                                @error('description_id')
                                     <p class="text-danger">
                                         <small>{{ $message }}</small>
                                     </p>
