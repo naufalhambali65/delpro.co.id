@@ -20,8 +20,9 @@ return [
         's2' => 'Konstruksi & Renovasi',
         's3' => 'Desain Interior & Pembangunan',
         's4' => 'Furnitur',
-        'question' => 'Ada Pertanyaan?',
-        'address' => 'Jl. Guru Tua, Kalukubula, Kec. Sigi Biromaru, Kabupaten Sigi, Sulawesi Tengah 94111',
+        'office' => 'Kantor',
+        'address' => 'Palu : Jl. Guru Tua, Kalukubula, Kec. Sigi Biromaru, Kabupaten Sigi, Sulawesi Tengah 94111',
+        'address_2' => 'Jabodetabek: Jl Griya Abdi Cilendek No. 6-7 Kota Bogor, Jawa Barat',
         'rights' => 'Hak Cipta Dilindungi',
     ],
 ];

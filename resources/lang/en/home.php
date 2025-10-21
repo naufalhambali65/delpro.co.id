@@ -1,12 +1,14 @@
 <?php
 return [
-    'hero_title_1' => 'We Create Elegant & Functional Interiors',
-    'hero_desc_1' => 'Delpro is the interior brand of PT. Delapan Jaya Propertindo, specializing in modern design, premium detailing, and comfortable spaces for your home, office, and commercial properties.',
-    'hero_title_2' => 'Bringing Your Dream Space to Life',
-    'hero_desc_2' => 'We design and execute every interior detail with thoughtful planning, creativity, and precision to deliver comfort and beauty in every space.',
+    'hero_title_1' => 'DESIGN, SPACE & EXPERIENCE',
+    'hero_desc_1' => 'Transforming ordinary spaces into extraordinary living experiences.',
+    'hero_title_2' => 'DREAM IT, LIVE IT !',
+    'hero_desc_2' => 'From your imagination to beautifully lived spaces.',
+    'hero_title_3' => 'WHERE SPACE MEETS SOUL',
+    'hero_desc_3' => 'Transforming spaces into soulful experiences that inspire life.',
     'view_portfolio' => 'View Our Portfolio',
 
-    'service_1_title' => 'Architecture & Planning',
+    'service_1_title' => 'Design & Planning',
     'service_1_desc' => 'Comprehensive planning services for residential and commercial buildings, delivered by experienced professionals.',
     'service_2_title' => 'Construction & Renovation',
     'service_2_desc' => 'From inspection and cost estimation to execution, we ensure precise and reliable services.',
@@ -14,7 +16,7 @@ return [
     'service_3_desc' => 'Dedicated to creating stylish and comfortable spaces with expert craftsmanship.',
 
     'about_us' => 'About Us',
-    'about_title' => 'Delpro – Professional Interior & Architectural Consultant',
+    'about_title' => 'Delpro – Professional Interior Design & Build.',
     'about_paragraph_1' => 'The demand for high-quality buildings has become a top priority, making it unsurprising that people are willing to invest significantly in educational institutions, offices, and residential homes.',
     'about_paragraph_2' => 'We are proud to introduce <strong>Delpro</strong>, operating under <strong>PT Delapan Jaya Propertindo</strong>. With full commitment, we are dedicated to assisting clients in creating comfortable, functional, and aesthetically pleasing spaces for both living and working.',
     'about_paragraph_3' => 'Our team is committed to excellence in design, construction, and delivering the finest experience to every client.',

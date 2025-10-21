@@ -260,7 +260,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center align-middle">
-                                            <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                            <img src="{{ asset('storage/public/' . $project->cover_image) }}"
                                                 alt="{{ $project->title }}" class="img-thumbnail"
                                                 style="width: 200px; height: 150px; object-fit: cover;">
                                         </td>

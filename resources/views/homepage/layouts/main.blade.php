@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="/homepage_assets/css/flaticon.css">
     <link rel="stylesheet" href="/homepage_assets/css/icomoon.css">
-    <link rel="stylesheet" href="/homepage_assets/css/style-rafi-2.css">
+    <link rel="stylesheet" href="/homepage_assets/css/style.css">
 
     {{-- sweet alert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -51,10 +51,9 @@
             width: auto;
         }
 
-        @media (max-width: 1367px) {
+        /* @media (max-width: 1367px) {
             .js-fullheight {
                 height: 60vh !important;
-                /* setengah layar di mobile */
             }
 
             .slider-item {
@@ -78,7 +77,7 @@
                 margin: 0 auto !important;
             }
 
-        }
+        } */
     </style>
 
     @yield('css')

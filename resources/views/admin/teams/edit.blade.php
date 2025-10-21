@@ -43,7 +43,7 @@
                                 <div class="mb-3">
                                     <label for="photo" class="form-label">Photo</label><br>
                                     @if ($team->photo)
-                                        <img src="{{ asset('storage/' . $team->photo) }}"
+                                        <img src="{{ asset('storage/public/' . $team->photo) }}"
                                             class="img-preview img-fluid mb-3 col-sm-5 d-block" style="object-fit: cover;">
                                     @else
                                         <img class="img-preview img-fluid mb-3 col-sm-5">

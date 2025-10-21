@@ -2,5 +2,5 @@
 
 return [
     'title' => 'Kenali Tim Kami',
-    'description' => 'Kami menarik, mengembangkan, dan mempertahankan talenta terbaik di industri dalam organisasi kami. Temui tim kami yang memegang posisi kepemimpinan:',
+    'description' => 'Kami percaya untuk tumbuh bersama dengan menarik dan membina talenta terbaik di industri ini. Kenali para pemimpin penuh dedikasi yang mewujudkan visi kami.',
 ];

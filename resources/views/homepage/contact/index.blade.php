@@ -48,12 +48,18 @@
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3">
-                    <p><span class="icon icon-map-marker"></span> Jl. Guru Tua, Kalukubula, Kec. Sigi
-                        Biromaru, Kabupaten Sigi, Sulawesi Tengah 94111</p>
+                    <p><span class="icon icon-map-marker"></span> Jabodetabek: Jl Griya Abdi Cilendek No. 6-7 Kota Bogor,
+                        Jawa Barat</p>
+                    <p><span class="icon icon-phone"></span><a
+                            href="https://wa.me/62812894567?text=Halo Admin Delpro aku mau tanya nih"> +62 812 894 567</a>
+                    </p>
+
                 </div>
                 <div class="col-md-3">
+                    <p><span class="icon icon-map-marker"></span> Palu : Jl. Guru Tua, Kalukubula, Kec. Sigi
+                        Biromaru, Kabupaten Sigi, Sulawesi Tengah 94111</p>
                     <p><span class="icon icon-phone"></span>
-                        <a href="https://wa.me/628112283338?text=Halo Admin Delpro aku mau tanya nih">+62 811 228 3338</a>
+                        <a href="https://wa.me/628112283338?text=Halo Admin Delpro aku mau tanya nih"> +62 811 228 3338</a>
                     </p>
                 </div>
                 <div class="col-md-3">

@@ -44,7 +44,7 @@
                                     <td>
                                         @if ($project->cover_image)
                                             <div>
-                                                <img src="{{ asset('storage/' . $project->cover_image) }}"
+                                                <img src="{{ asset('storage/public/' . $project->cover_image) }}"
                                                     class="img-fluid img-thumbnail rounded shadow-sm"
                                                     style="max-width: 300px; height: auto; object-fit: cover;">
                                             </div>
@@ -209,9 +209,9 @@
                     <div class="row">
                         @foreach ($images as $image)
                             <div class="col-sm-2">
-                                <a href="{{ asset('storage/' . $image) }}" data-toggle="lightbox"
+                                <a href="{{ asset('storage/public/' . $image) }}" data-toggle="lightbox"
                                     data-title="Gambar ke {{ $loop->iteration }}" data-gallery="gallery">
-                                    <img src="{{ asset('storage/' . $image) }}" class="img-fluid mb-2"
+                                    <img src="{{ asset('storage/public/' . $image) }}" class="img-fluid mb-2"
                                         alt="{{ $project->title }}" />
                                 </a>
                             </div>

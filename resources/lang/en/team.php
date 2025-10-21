@@ -2,5 +2,5 @@
 
 return [
     'title' => 'Meet Our People',
-    'description' => 'We attract, develop, and retain the best talent among the industry in our organization. Meet our team who hold the leadership positions:',
+    'description' => 'We believe in growing together by attracting and nurturing the best talent in the industry. Meet the passionate leaders who bring our vision to life',
 ];

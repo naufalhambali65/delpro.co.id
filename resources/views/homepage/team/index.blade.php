@@ -17,13 +17,23 @@
             height: 100vh;
             width: 300px;
             object-fit: cover;
-            z-index: -1;
             object-position: right;
+            pointer-events: none;
+            z-index: -1;
         }
+
 
         @media (max-width: 991.98px) {
             .side-image {
                 display: none;
+            }
+        }
+
+        @media (min-width: 991px) {
+
+            .teamsection .container {
+                margin-right: 320px;
+                max-width: calc(100% - 340px);
             }
         }
     </style>
@@ -46,7 +56,7 @@
         </div>
     </section> --}}
 
-    <section class="ftco-section py-5">
+    <section class="ftco-section py-5 teamsection">
         <div class="container">
             <br>
             <div class="row justify-content-center my-5 pb-3">
@@ -61,7 +71,7 @@
             @foreach ($teams as $team)
                 <div class="row align-items-center ftco-animate my-3">
                     <div class="col-md-3">
-                        <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
+                        <img src="{{ asset('storage/public/' . $team->photo) }}" alt="{{ $team->name }}"
                             class="img-fluid team-photo">
                     </div>
                     <div class="col-md-9">
@@ -81,7 +91,7 @@
                             <li class="ftco-animate" {{ $team->facebook ? '' : 'hidden' }}>
                                 <a href="{{ $team->facebook }}" target="_blank"><span class="icon-facebook"></span></a>
                             </li>
-                            <li class="ftco-animate {{ $team->email ? '' : 'hidden' }}">
+                            <li class="ftco-animate" {{ $team->email ? '' : 'hidden' }}>
                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ $team->email }}"
                                     target="_blank"><span class="icon-envelope-o"></span></a>
                             </li>

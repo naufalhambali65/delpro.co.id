@@ -15,28 +15,28 @@ AOS.init({
         scrollProperty: "scroll",
     });
 
-    // var fullHeight = function () {
-    //     $(".js-fullheight").css("height", $(window).height());
-    //     $(window).resize(function () {
-    //         $(".js-fullheight").css("height", $(window).height());
-    //     });
-    // };
-    // fullHeight();
-
     var fullHeight = function () {
-        function setHeight() {
-            if ($(window).width() > 768) {
-                $(".js-fullheight").css("height", $(window).height());
-            } else {
-                $(".js-fullheight").css("height", "auto");
-            }
-        }
-
-        setHeight();
-        $(window).resize(setHeight);
+        $(".js-fullheight").css("height", $(window).height());
+        $(window).resize(function () {
+            $(".js-fullheight").css("height", $(window).height());
+        });
     };
-
     fullHeight();
+
+    // var fullHeight = function () {
+    //     function setHeight() {
+    //         if ($(window).width() > 768) {
+    //             $(".js-fullheight").css("height", $(window).height());
+    //         } else {
+    //             $(".js-fullheight").css("height", "auto");
+    //         }
+    //     }
+
+    //     setHeight();
+    //     $(window).resize(setHeight);
+    // };
+
+    // fullHeight();
 
     // loader
     var loader = function () {
@@ -54,7 +54,7 @@ AOS.init({
     var carousel = function () {
         $(".home-slider").owlCarousel({
             loop: true,
-            autoplay: true,
+            autoplay: false,
             margin: 0,
             animateOut: "fadeOut",
             animateIn: "fadeIn",

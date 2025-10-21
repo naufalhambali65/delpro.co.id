@@ -1,12 +1,14 @@
 <?php
 return [
-    'hero_title_1' => 'Kami Menciptakan Interior yang Elegan & Fungsional',
-    'hero_desc_1' => 'Delpro adalah merek interior dari PT. Delapan Jaya Propertindo, yang mengkhususkan diri pada desain modern, detail premium, dan ruang yang nyaman untuk rumah, kantor, dan properti komersial Anda.',
-    'hero_title_2' => 'Mewujudkan Ruang Impian Anda',
-    'hero_desc_2' => 'Kami merancang dan mengeksekusi setiap detail interior dengan perencanaan yang matang, kreativitas, dan ketelitian untuk menghadirkan kenyamanan dan keindahan di setiap ruang.',
+    'hero_title_1' => 'DESAIN, RUANG & PENGALAMAN',
+    'hero_desc_1' => 'Mengubah ruang biasa menjadi pengalaman hidup yang luar biasa.',
+    'hero_title_2' => 'BAYANGKAN, WUJUDKAN!',
+    'hero_desc_2' => 'Dari imajinasi menjadi ruang yang benar-benar Anda nikmati.',
+    'hero_title_3' => 'SAAT RUANG BERTEMU JIWA',
+    'hero_desc_3' => 'Menciptakan ruang yang menyentuh jiwa dan menghidupkan inspirasi.',
     'view_portfolio' => 'Lihat Portofolio Kami',
 
-    'service_1_title' => 'Arsitektur & Perencanaan',
+    'service_1_title' => 'Desain & Perencanaan',
     'service_1_desc' => 'Layanan perencanaan komprehensif untuk bangunan hunian dan komersial yang disampaikan oleh profesional berpengalaman.',
     'service_2_title' => 'Konstruksi & Renovasi',
     'service_2_desc' => 'Dari inspeksi dan estimasi biaya hingga pelaksanaan, kami memastikan layanan yang tepat dan andal.',
@@ -14,12 +16,12 @@ return [
     'service_3_desc' => 'Berdedikasi menciptakan ruang yang bergaya dan nyaman dengan pengerjaan yang ahli.',
 
     'about_us' => 'Tentang Kami',
-    'about_title' => 'Delpro – Konsultan Interior & Arsitektur Profesional',
-    
+    'about_title' => 'Delpro – Desain Interior & Konstruksi Profesional',
+
     'about_paragraph_1' => 'Permintaan akan bangunan berkualitas tinggi telah menjadi prioritas utama, sehingga tidak mengherankan jika banyak orang bersedia berinvestasi besar dalam lembaga pendidikan, perkantoran, dan hunian.',
     'about_paragraph_2' => 'Kami dengan bangga memperkenalkan <strong>Delpro</strong> yang beroperasi di bawah naungan <strong>PT Delapan Jaya Propertindo</strong>. Dengan komitmen penuh, kami berdedikasi membantu klien menciptakan ruang yang nyaman, fungsional, dan estetis untuk hunian maupun tempat kerja.',
     'about_paragraph_3' => 'Tim kami berkomitmen untuk menghadirkan keunggulan dalam desain, konstruksi, dan memberikan pengalaman terbaik bagi setiap klien.',
-    
+
     'facts_subheading' => 'Delpro',
     'facts_title' => 'Fakta Menarik Tentang Kami',
     'experience' => 'Tahun Pengalaman',

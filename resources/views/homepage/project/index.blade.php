@@ -91,7 +91,7 @@
                     <div class="col-md-4 ftco-animate">
                         <div class="blog-entry position-relative project-card">
                             <a href="{{ route('project.detail', $project->slug) }}" class="block-20 mb-0"
-                                style="background-image: url('{{ asset('storage/' . $project->cover_image) }}');">
+                                style="background-image: url('{{ asset('storage/public/' . $project->cover_image) }}');">
                             </a>
                             <div class="overlay-info d-flex justify-content-between">
                                 <span><i class="icon-layers"></i> {{ $project->type->name }}</span>
@@ -205,7 +205,7 @@
                     <div class="col-md-4 ftco-animate">
                         <div class="blog-entry position-relative project-card">
                             <a href="{{ route('project.detail', $project->slug) }}" class="block-20 mb-0"
-                                style="background-image: url('{{ asset('storage/' . $project->cover_image) }}');">
+                                style="background-image: url('{{ asset('storage/public/' . $project->cover_image) }}');">
                             </a>
                             <div class="overlay-info d-flex justify-content-between">
                                 <span><i class="icon-layers"></i> {{ $project->type->name }}</span>

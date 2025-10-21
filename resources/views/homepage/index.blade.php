@@ -1,4 +1,27 @@
 @extends('homepage.layouts.main')
+@section('css')
+    <style>
+        /* Ubah layout services jadi horizontal saat di mobile */
+        @media (max-width: 768px) {
+            .ftco-services .services {
+                display: flex !important;
+                align-items: center;
+                margin-top: 50px;
+            }
+
+            .ftco-services .services .icon {
+                margin-right: 15px;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+                /* biar ukuran icon tidak mengecil */
+            }
+
+            .ftco-services .services .media-body {
+                text-align: left;
+            }
+        }
+    </style>
+@endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
         <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_6.jpg);">
@@ -13,9 +36,6 @@
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                             {{ __('home.hero_desc_1') }}
                         </p>
-                        <p><a href="{{ route('project') }}" class="btn btn-white btn-outline-white px-4 py-3 mt-3">
-                                {{ __('home.view_portfolio') }}
-                            </a></p>
                     </div>
                 </div>
             </div>
@@ -33,9 +53,22 @@
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                             {{ __('home.hero_desc_2') }}
                         </p>
-                        <p><a href="{{ route('project') }}" class="btn btn-white btn-outline-white px-4 py-3 mt-3">
-                                {{ __('home.view_portfolio') }}
-                            </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_9.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
+                    data-scrollax-parent="true">
+                    <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                            <strong>{{ __('home.hero_title_3') }}</strong>
+                        </h1>
+                        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                            {{ __('home.hero_desc_3') }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -48,7 +81,8 @@
                 <div class="col-md-4 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block">
                         <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="flaticon-compass-symbol"></span>
+                            <img src="/homepage_assets/images/icon/icon_1.png" alt="My Icon"
+                                style="width: 100px; height: 100px; border-radius: 50%;">
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading"><strong>{{ __('home.service_1_title') }}</strong></h3>
@@ -60,7 +94,21 @@
                 <div class="col-md-4 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block">
                         <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="flaticon-layers"></span>
+                            <img src="/homepage_assets/images/icon/icon_2.png" alt="My Icon"
+                                style="width: 100px; height: 100px; border-radius: 50%;">
+                        </div>
+                        <div class="media-body p-2 mt-3">
+                            <h3 class="heading"><strong>{{ __('home.service_3_title') }}</strong></h3>
+                            <p style="text-align: justify">{{ __('home.service_3_desc') }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services d-block">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <img src="/homepage_assets/images/icon/icon_3.png" alt="My Icon"
+                                style="width: 100px; height: 100px; border-radius: 50%;">
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading"><strong>{{ __('home.service_2_title') }}</strong></h3>
@@ -69,17 +117,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services d-block">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="flaticon-idea"></span>
-                        </div>
-                        <div class="media-body p-2 mt-3">
-                            <h3 class="heading"><strong>{{ __('home.service_3_title') }}</strong></h3>
-                            <p style="text-align: justify">{{ __('home.service_3_desc') }}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -123,7 +160,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="10">0</strong>
+                                    <strong class="number" data-number="5">0</strong>
                                     <span>{{ __('home.experience') }}</span>
                                 </div>
                             </div>
@@ -173,7 +210,7 @@
                             <div class="item">
                                 <div class="testimony-wrap p-4 pb-5">
                                     <div class="user-img "
-                                        style="width: 100%; min-height: 50px; background-image: url('{{ asset('storage/' . $client->logo) }}'); background-size: contain; background-position: center; background-repeat: no-repeat;">
+                                        style="width: 100%; min-height: 50px; background-image: url('{{ asset('storage/public/' . $client->logo) }}'); background-size: contain; background-position: center; background-repeat: no-repeat;">
                                         <span class=" d-flex align-items-center justify-content-center"> </span>
                                     </div>
                                     <div class="text" style="text-align: center">
@@ -189,7 +226,7 @@
         </div>
     </section>
 
-    <section class="ftco-section">
+    {{-- <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-8 heading-section ftco-animate text-center">
@@ -203,7 +240,7 @@
                         <div class="col-md-6 col-lg-3 ftco-animate d-flex justify-content-center">
                             <div class="staff">
                                 <div class="img"
-                                    style="background-image: url({{ asset('storage/' . $team->photo) }});"> </div>
+                                    style="background-image: url({{ asset('storage/public/' . $team->photo) }});"> </div>
                                 <div class="text pt-4">
                                     <h3>{{ $team->name }}</h3> <span
                                         class="position"><strong>{{ $team->role }}</strong></span>
@@ -231,5 +268,5 @@
                 @endif
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

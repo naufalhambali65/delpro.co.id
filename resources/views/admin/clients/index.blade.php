@@ -34,14 +34,14 @@
                                         <td class="text-center align-middle">{{ $client->name }}</td>
                                         <td class="text-center align-middle">{{ $client->category->name }}</td>
                                         <td class="text-center align-middle">
-                                            <img src="{{ asset('storage/' . $client->logo) }}"
+                                            <img src="{{ asset('storage/public/' . $client->logo) }}"
                                                 alt="{{ $client->name }}" class="img-thumbnail"
                                                 style="width: 220px; height: auto; object-fit: cover;">
                                         </td>
                                         <td class="text-center align-middle">
                                             <a href="#" class="btn btn-primary btn-edit" data-id="{{ $client->id }}"
                                                 data-name="{{ $client->name }}" data-category="{{ $client->category_id }}"
-                                                data-logo="{{ asset('storage/' . $client->logo) }}"
+                                                data-logo="{{ asset('storage/public/' . $client->logo) }}"
                                                 data-oldlogo="{{ $client->logo }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>

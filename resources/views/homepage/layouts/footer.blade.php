@@ -47,9 +47,14 @@
             </div> --}}
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2 mb-0">{{ __('layout.footer.question') }}</h2>
+                    <h2 class="ftco-heading-2 mb-0">{{ __('layout.footer.office') }}</h2>
                     <div class="block-23 mb-3">
                         <ul>
+                            <li><span class="icon icon-map-marker"></span><span
+                                    class="text">{{ __('layout.footer.address_2') }}</span></li>
+                            <li><a href="https://wa.me/62812894567?text=Halo Admin Delpro aku mau tanya nih"><span
+                                        class="icon icon-phone"></span><span class="text">+62 812
+                                        894 567</span></a></li>
                             <li><span class="icon icon-map-marker"></span><span
                                     class="text">{{ __('layout.footer.address') }}</span></li>
                             <li><a href="https://wa.me/628112283338?text=Halo Admin Delpro aku mau tanya nih"><span
