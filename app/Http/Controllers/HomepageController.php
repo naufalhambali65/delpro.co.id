@@ -49,13 +49,17 @@ class HomepageController extends Controller
     public function client()
     {
         $clients = Client::with('category')->get();
+        $order = ['International', 'National'];
 
         $datas = $clients->groupBy(fn($client) => $client->category->name)
-                 ->map(fn($group) => $group->map(fn($c) => [
-                     'name' => $c->name,
-                     'logo' => $c->logo,
-                     'category' => $c->category->name,
-                 ]));
+            ->sortBy(function ($group, $key) use ($order) {
+                return array_search($key, $order);
+            })
+            ->map(fn($group) => $group->map(fn($c) => [
+                'name' => $c->name,
+                'logo' => $c->logo,
+                'category' => $c->category->name,
+            ]));
 
         return view('homepage.client.index', compact('datas'));
     }

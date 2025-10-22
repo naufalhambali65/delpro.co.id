@@ -46,7 +46,7 @@
                     <div class="col-md-12">
                         <h4 class="mb-4 text-uppercase">
                             <strong>
-                                {{ $loop->iteration == 1 ? __('client.local_brand') : __('client.international_brand') }}
+                                {{ $loop->iteration == 2 ? __('client.local_brand') : __('client.international_brand') }}
                             </strong>
                         </h4>
                     </div>
