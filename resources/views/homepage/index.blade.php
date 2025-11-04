@@ -185,7 +185,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="200"></strong>+
+                                    <strong class="number" data-number="200"></strong>
                                     <span>{{ __('home.clients') }}</span>
                                 </div>
                             </div>
