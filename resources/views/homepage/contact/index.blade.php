@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <section class="ftco-section contact-section">
+    <section class="ftco-section contact-section pt-5">
         <div class="container">
             <div class="row d-flex mb-5 contact-info">
                 <div class="col-md-12 mb-4">

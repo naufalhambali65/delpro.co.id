@@ -30,6 +30,9 @@
         }
 
         @media (min-width: 991px) {
+            .header-people {
+                margin-top: 100px
+            }
 
             .teamsection .container {
                 margin-right: 320px;
@@ -57,9 +60,9 @@
     </section> --}}
 
     <section class="ftco-section py-5 teamsection">
-        <div class="container">
+        <div class="container pt-0">
             <br>
-            <div class="row justify-content-center my-5 pb-3">
+            <div class="row justify-content-center mb-5 pb-3 pt-0 header-people">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h1 class="mb-4"><strong>{{ __('team.title') }}</strong></h1>
                     <p class="text-muted">
