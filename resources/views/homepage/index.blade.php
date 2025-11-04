@@ -168,7 +168,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="250">0</strong>
+                                    <strong class="number" data-number="200">0</strong>
                                     <span>{{ __('home.clients') }}</span>
                                 </div>
                             </div>
@@ -176,7 +176,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="400">0</strong>
+                                    <strong class="number" data-number="300">0</strong>
                                     <span>{{ __('home.projects') }}</span>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="50">0</strong>
+                                    <strong class="number" data-number="30">0</strong>
                                     <span>{{ __('home.team') }}</span>
                                 </div>
                             </div>
