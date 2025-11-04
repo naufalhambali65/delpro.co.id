@@ -146,11 +146,11 @@
     <section class="ftco-section ftco-counter img" id="section-counter"
         style="background-image: url(/homepage_assets/images/bg_9.jpg);" data-stellar-background-ratio="0.5">
         <div class="container">
-            <div class="row d-md-flex align-items-center justify-content-center">
+            <div class="row d-md-flex align-items-center justify-content-center mb-0 mt-0">
                 <div class="col-lg-4">
-                    <div class="heading-section pl-md-5 heading-section-white">
+                    <div class="heading-section pl-md-5 heading-section-white mt-0">
                         <div class="pl-md-5 ml-md-5 ftco-animate">
-                            <span class="subheading"><strong>{{ __('home.facts_subheading') }}</strong></span>
+                            {{-- <span class="subheading"><strong>{{ __('home.facts_subheading') }}</strong></span> --}}
                             <h2 class="mb-4"><strong>{{ __('home.facts_title') }}</strong></h2>
                         </div>
                     </div>
