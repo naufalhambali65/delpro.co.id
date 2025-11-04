@@ -146,7 +146,7 @@
     <section class="ftco-section ftco-counter img" id="section-counter"
         style="background-image: url(/homepage_assets/images/bg_9.jpg);" data-stellar-background-ratio="0.5">
         <div class="container">
-            <div class="row d-md-flex align-items-center justify-content-center mb-0 mt-0">
+            <div class="row d-md-flex align-items-center justify-content-center mb-0 mt-0 py-0">
                 <div class="col-lg-4">
                     <div class="heading-section pl-md-5 heading-section-white mt-0">
                         <div class="pl-md-5 ml-md-5 ftco-animate">
