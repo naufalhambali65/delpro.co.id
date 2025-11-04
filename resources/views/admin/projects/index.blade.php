@@ -249,8 +249,8 @@
                                         <td class="text-center align-middle">
                                             <div class="progress" style="height: 20px;">
                                                 <div class="progress-bar
-                                                    @if ($project->progress < 50) bg-danger
-                                                    @elseif($project->progress < 80) bg-warning
+                                                    @if ($project->progress < 33) bg-secondary
+                                                    @elseif($project->progress < 66) bg-warning
                                                     @else bg-success @endif"
                                                     role="progressbar" style="width: {{ $project->progress }}%;"
                                                     aria-valuenow="{{ $project->progress }}" aria-valuemin="0"

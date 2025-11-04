@@ -174,7 +174,7 @@
 @endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_10.jpg)">
+        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_20.png)">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text slider-menu justify-content-center align-items-center">

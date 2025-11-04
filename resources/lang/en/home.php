@@ -4,8 +4,10 @@ return [
     'hero_desc_1' => 'Transforming ordinary spaces into extraordinary living experiences.',
     'hero_title_2' => 'DREAM IT, LIVE IT !',
     'hero_desc_2' => 'From your imagination to beautifully lived spaces.',
-    'hero_title_3' => 'WHERE SPACE MEETS SOUL',
-    'hero_desc_3' => 'Transforming spaces into soulful experiences that inspire life.',
+    'hero_title_3' => 'DESIGN THAT DRIVE BUSINESS',
+    'hero_desc_3' => 'Design built to elevate your business impact.',
+    'hero_title_4' => 'SHAPE IMPRESSION, BUILD BRANDS',
+    'hero_desc_4' => 'Designing memorable spaces that define your brand.',
     'view_portfolio' => 'View Our Portfolio',
 
     'service_1_title' => 'Design & Planning',

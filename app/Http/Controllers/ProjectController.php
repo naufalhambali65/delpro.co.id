@@ -132,7 +132,8 @@ class ProjectController extends Controller
 
         $pondFiles = array_map(function ($img) {
             $path = storage_path('app/public/' . $img);
-            $tempPath = public_path('storage/temp_files/' . basename($img));
+            // $tempPath = public_path('/storage/temp_files/' . basename($img));
+            $tempPath = storage_path('/public/temp_files/' . basename($img));
             if (file_exists($path) && !file_exists($tempPath)) {
                 copy($path, $tempPath);
                 TemporaryFile::create([

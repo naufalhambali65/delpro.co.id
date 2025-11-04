@@ -4,8 +4,10 @@ return [
     'hero_desc_1' => 'Mengubah ruang biasa menjadi pengalaman hidup yang luar biasa.',
     'hero_title_2' => 'BAYANGKAN, WUJUDKAN!',
     'hero_desc_2' => 'Dari imajinasi menjadi ruang yang benar-benar Anda nikmati.',
-    'hero_title_3' => 'SAAT RUANG BERTEMU JIWA',
-    'hero_desc_3' => 'Menciptakan ruang yang menyentuh jiwa dan menghidupkan inspirasi.',
+    'hero_title_3' => 'DESAIN YANG MENGGERAKKAN BISNIS',
+    'hero_desc_3' => 'Desain yang dibuat untuk meningkatkan dampak bisnis Anda.',
+    'hero_title_4' => 'MEMBENTUK KESAN, MEMBANGUN MEREK',
+    'hero_desc_4' => 'Merancang ruang berkesan yang mendefinisikan merek Anda.',
     'view_portfolio' => 'Lihat Portofolio Kami',
 
     'service_1_title' => 'Desain & Perencanaan',

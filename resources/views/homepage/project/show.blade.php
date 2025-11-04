@@ -131,7 +131,8 @@
 @endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image: url(/homepage_assets/images/bg_11.jpg)">
+        <div class="slider-item js-fullheight"
+            style="background-image: url({{ asset('storage/public/' . $project->cover_image) }})">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text slider-menu justify-content-center align-items-center">
@@ -146,15 +147,11 @@
             </div>
         </div>
     </section>
-    <section class="ftco-section">
+    <section class="ftco-section pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ftco-animate text-center">
-                    <h1 class="mb-3"><strong>{{ $project->title }}</strong></h1>
-                    <img src="{{ asset('storage/public/' . $project->cover_image) }}" alt="{{ $project->title }}"
-                        class="img-fluid project-cover">
-                    {{-- Project Info --}}
-                    <div class="row justify-content-center mt-4">
+                    <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="row d-flex justify-content-between mx-3">
                                 <div class="mb-3">
@@ -208,7 +205,7 @@
                     @foreach ($images as $image)
                         <div class="col-md-6 col-lg-3 ftco-animate">
                             <div class="project">
-                                <img src="{{ asset('storage/public/' . $image) }}" class="img-fluid"
+                                <img src="{{ asset('storage/public/' . $image) }}" class="img-fluid mb-3"
                                     alt="{{ $project->title }}">
                                 <a href="{{ asset('storage/public/' . $image) }}"
                                     class="icon image-popup d-flex justify-content-center align-items-center">

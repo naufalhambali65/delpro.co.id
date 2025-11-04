@@ -24,7 +24,7 @@
 @endsection
 @section('container')
     <section class="home-slider js-fullheight owl-carousel">
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_6.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_15.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_7.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_18.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
@@ -57,7 +57,23 @@
                 </div>
             </div>
         </div>
-        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_9.jpg);">
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_21.png);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
+                    data-scrollax-parent="true">
+                    <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                            <strong>{{ __('home.hero_title_4') }}</strong>
+                        </h1>
+                        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                            {{ __('home.hero_desc_4') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item js-fullheight" style="background-image:url(/homepage_assets/images/bg_19.png);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
@@ -73,6 +89,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <section class="ftco-services bg-light">
@@ -124,7 +141,7 @@
     <section class="ftco-section ftc-no-pb">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/bg_8.jpg);">
+                <div class="col-md-5 p-md-5 img img-2" style="background-image: url(/homepage_assets/images/bg_17.jpg);">
                 </div>
                 <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
                     <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
@@ -168,7 +185,7 @@
                         <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18 text-center">
                                 <div class="text">
-                                    <strong class="number" data-number="200">0</strong>
+                                    <strong class="number" data-number="200"></strong>+
                                     <span>{{ __('home.clients') }}</span>
                                 </div>
                             </div>

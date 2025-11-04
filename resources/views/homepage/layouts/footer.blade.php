@@ -8,9 +8,13 @@
                     </a>
                     <p style="text-align: justify">{{ __('layout.footer.description') }}</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.tiktok.com/@delpro.co.id"
+                                target="_blank"><span><img src="/homepage_assets/images/icon/tik-tok.png" alt="My Icon"
+                                        style="width: 30px; height: 30px;"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebook.com/delpro.co.id" target="_blank"><span
+                                    class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/delpro.co.id" target="_blank"><span
+                                    class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>

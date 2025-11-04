@@ -27,7 +27,7 @@
             <h1 class="fw-bold">{{ $project->title }}</h1>
             <div class="progress mt-3" style="height: 30px; width: 60%; border-radius: 20px; overflow: hidden;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated
-                    @if ($project->progress < 33) bg-danger
+                    @if ($project->progress < 33) bg-secondary
                     @elseif($project->progress < 66) bg-warning
                     @else bg-success @endif"
                     role="progressbar" style="width: {{ $project->progress }}%;" aria-valuenow="{{ $project->progress }}"
