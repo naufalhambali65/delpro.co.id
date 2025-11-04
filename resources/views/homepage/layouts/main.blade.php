@@ -51,7 +51,7 @@
             width: auto;
         }
 
-        /* @media (max-width: 1367px) {
+        @media (max-width: 1367px) {
             .js-fullheight {
                 height: 60vh !important;
             }
@@ -77,7 +77,7 @@
                 margin: 0 auto !important;
             }
 
-        } */
+        }
     </style>
 
     @yield('css')
